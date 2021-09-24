@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,10 +14,9 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResuableCustomTextFieldView" customModule="textFields_" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
             <connections>
                 <outlet property="leftLabel" destination="e1s-nZ-cTe" id="VE0-ZR-MWu"/>
-                <outlet property="rightLabel" destination="f0S-f7-oyN" id="NX4-d7-FYU"/>
                 <outlet property="score" destination="Uzu-Yb-rZM" id="1Yi-yY-ukn"/>
                 <outlet property="textField" destination="V1a-BN-ZCl" id="t68-jV-NhK"/>
             </connections>
@@ -29,19 +29,13 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ge-9q-tVs">
                     <rect key="frame" x="0.0" y="140.5" width="563" height="66"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V1a-BN-ZCl" userLabel="CustomTextField">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V1a-BN-ZCl" userLabel="CustomTextField" customClass="CustomTextField" customModule="textFields_" customModuleProvider="target">
                             <rect key="frame" x="16" y="27" width="531" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="leftLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1s-nZ-cTe">
                             <rect key="frame" x="16" y="-1.5" width="62" height="20.5"/>
-                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rightLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0S-f7-oyN">
-                            <rect key="frame" x="475.5" y="-1.5" width="71.5" height="20.5"/>
                             <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -60,11 +54,9 @@
                         <constraint firstAttribute="height" constant="66" id="4Z0-Ng-Dqi"/>
                         <constraint firstAttribute="bottom" secondItem="Uzu-Yb-rZM" secondAttribute="bottom" constant="-5" id="DwI-2z-08z"/>
                         <constraint firstItem="e1s-nZ-cTe" firstAttribute="leading" secondItem="5Ge-9q-tVs" secondAttribute="leading" constant="16" id="LYs-wT-0qW"/>
-                        <constraint firstItem="V1a-BN-ZCl" firstAttribute="top" secondItem="f0S-f7-oyN" secondAttribute="bottom" constant="8" id="OfG-lT-OCB"/>
                         <constraint firstAttribute="bottom" secondItem="V1a-BN-ZCl" secondAttribute="bottom" constant="5" id="PuC-9w-gyo"/>
                         <constraint firstItem="V1a-BN-ZCl" firstAttribute="top" secondItem="e1s-nZ-cTe" secondAttribute="bottom" constant="8" id="WZL-iU-Q0m"/>
                         <constraint firstAttribute="trailing" secondItem="Uzu-Yb-rZM" secondAttribute="trailing" constant="25" id="XoE-v5-EXu"/>
-                        <constraint firstAttribute="trailing" secondItem="f0S-f7-oyN" secondAttribute="trailing" constant="16" id="cGB-iZ-RA5"/>
                         <constraint firstItem="V1a-BN-ZCl" firstAttribute="leading" secondItem="5Ge-9q-tVs" secondAttribute="leading" constant="16" id="i3O-hP-3BP"/>
                     </constraints>
                 </view>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,15 +12,12 @@
         <array key="SF-Pro-Display-Bold.otf">
             <string>SFProDisplay-Bold</string>
         </array>
-        <array key="SF-Pro-Display-Regular.otf">
-            <string>SFProDisplay-Regular</string>
-        </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Text Fields View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="textFields_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TextFieldsViewController" customModule="textFields_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,35 +31,35 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpG-sI-hbv" customClass="ResuableCustomTextFieldView" customModule="textFields_" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpG-sI-hbv" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="65" width="414" height="66"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="66" id="04u-zH-Hek"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ICe-dj-SeO" customClass="ResuableCustomTextFieldView" customModule="textFields_" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ICe-dj-SeO" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="155" width="414" height="66"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="66" id="e3e-9X-mPB"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drH-M9-F7V" customClass="ResuableCustomTextFieldView" customModule="textFields_" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drH-M9-F7V" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="245" width="414" height="66"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="66" id="PYz-iZ-lep"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NGO-Bl-eun" customClass="ResuableCustomTextFieldView" customModule="textFields_" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NGO-Bl-eun" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="335" width="414" height="66"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="66" id="8xt-iU-rSg"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3e6-vd-zcq" customClass="ResuableCustomTextFieldView" customModule="textFields_" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3e6-vd-zcq" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="425" width="414" height="66"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -84,46 +82,22 @@
                                     <constraint firstAttribute="trailing" secondItem="drH-M9-F7V" secondAttribute="trailing" id="tGa-Ot-r9W"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Yyk-2A-TuT">
-                                <rect key="frame" x="24" y="635" width="139" height="79"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Min length 8 characters." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOD-vt-0S2">
-                                        <rect key="frame" x="0.0" y="0.0" width="139" height="16"/>
-                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Min 1 digit," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELe-bn-kWM">
-                                        <rect key="frame" x="0.0" y="21" width="139" height="16"/>
-                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Min 1 lowercase," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qy-FI-t8i">
-                                        <rect key="frame" x="0.0" y="42" width="139" height="16"/>
-                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Min 1 capital required." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQP-Y6-kFE">
-                                        <rect key="frame" x="0.0" y="63" width="139" height="16"/>
-                                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="13"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Da-Y9-JR7" secondAttribute="trailing" id="01e-qb-a5G"/>
-                            <constraint firstItem="Yyk-2A-TuT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="4Eh-DE-7xM"/>
                             <constraint firstItem="8Da-Y9-JR7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="92" id="H9N-aT-wE1"/>
                             <constraint firstItem="8Da-Y9-JR7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bci-9a-Szl"/>
-                            <constraint firstItem="Yyk-2A-TuT" firstAttribute="top" secondItem="8Da-Y9-JR7" secondAttribute="bottom" constant="8" id="ohE-pi-6pU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="inputLimitField" destination="ICe-dj-SeO" id="840-UF-JWW"/>
+                        <outlet property="linkField" destination="NGO-Bl-eun" id="hRW-Zs-dox"/>
+                        <outlet property="noDigitsField" destination="gpG-sI-hbv" id="KQw-Mg-PV2"/>
+                        <outlet property="onlyCharactersField" destination="drH-M9-F7V" id="HS0-FS-oGY"/>
+                        <outlet property="validationRulesField" destination="3e6-vd-zcq" id="kZR-KY-W4D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
