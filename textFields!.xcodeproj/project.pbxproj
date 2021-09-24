@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		974AC76526FB26DE0032B1CF /* TextFieldsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974AC76426FB26DE0032B1CF /* TextFieldsStyle.swift */; };
+		974AC76926FB273E0032B1CF /* TextFieldsViewController + UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974AC76826FB273E0032B1CF /* TextFieldsViewController + UITextFieldDelegate.swift */; };
 		977905D626F689C7005815EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977905D526F689C7005815EA /* AppDelegate.swift */; };
 		977905D826F689C7005815EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977905D726F689C7005815EA /* SceneDelegate.swift */; };
-		977905DA26F689C7005815EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977905D926F689C7005815EA /* ViewController.swift */; };
+		977905DA26F689C7005815EA /* TextFieldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977905D926F689C7005815EA /* TextFieldsViewController.swift */; };
 		977905DD26F689C7005815EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 977905DB26F689C7005815EA /* Main.storyboard */; };
 		977905DF26F689C8005815EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 977905DE26F689C8005815EA /* Assets.xcassets */; };
 		977905E226F689C8005815EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 977905E026F689C8005815EA /* LaunchScreen.storyboard */; };
-		97AA949326F910F800D000BE /* ResuableCustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AA949226F910F800D000BE /* ResuableCustomTextFieldView.swift */; };
-		97AA949526F9110F00D000BE /* ResuableCustomTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97AA949426F9110F00D000BE /* ResuableCustomTextFieldView.xib */; };
+		9788D54B26FE850800C610EE /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9788D54A26FE850800C610EE /* CustomTextField.swift */; };
+		9788D54D26FE859400C610EE /* TextFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9788D54C26FE859400C610EE /* TextFieldModel.swift */; };
+		97AA949326F910F800D000BE /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AA949226F910F800D000BE /* TextFieldView.swift */; };
+		97AA949526F9110F00D000BE /* TextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97AA949426F9110F00D000BE /* TextFieldView.xib */; };
 		97AA949826F912A300D000BE /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 97AA949726F912A300D000BE /* SF-Pro-Display-Bold.otf */; };
 		97AA949A26F912AE00D000BE /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 97AA949926F912AE00D000BE /* SF-Pro-Display-Regular.otf */; };
 		BFC81DC9A09FD05C2B6166A1 /* Pods_textFields_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA416BDAD7C8624A62D9AF2 /* Pods_textFields_.framework */; };
@@ -22,16 +26,20 @@
 
 /* Begin PBXFileReference section */
 		96688C0FF955DE1D627D7E2A /* Pods-textFields!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-textFields!.release.xcconfig"; path = "Target Support Files/Pods-textFields!/Pods-textFields!.release.xcconfig"; sourceTree = "<group>"; };
+		974AC76426FB26DE0032B1CF /* TextFieldsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsStyle.swift; sourceTree = "<group>"; };
+		974AC76826FB273E0032B1CF /* TextFieldsViewController + UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFieldsViewController + UITextFieldDelegate.swift"; sourceTree = "<group>"; };
 		977905D226F689C7005815EA /* textFields!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "textFields!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		977905D526F689C7005815EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		977905D726F689C7005815EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		977905D926F689C7005815EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		977905D926F689C7005815EA /* TextFieldsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsViewController.swift; sourceTree = "<group>"; };
 		977905DC26F689C7005815EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		977905DE26F689C8005815EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		977905E126F689C8005815EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		977905E326F689C8005815EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		97AA949226F910F800D000BE /* ResuableCustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResuableCustomTextFieldView.swift; sourceTree = "<group>"; };
-		97AA949426F9110F00D000BE /* ResuableCustomTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResuableCustomTextFieldView.xib; sourceTree = "<group>"; };
+		9788D54A26FE850800C610EE /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		9788D54C26FE859400C610EE /* TextFieldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModel.swift; sourceTree = "<group>"; };
+		97AA949226F910F800D000BE /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		97AA949426F9110F00D000BE /* TextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldView.xib; sourceTree = "<group>"; };
 		97AA949726F912A300D000BE /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		97AA949926F912AE00D000BE /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		9CA416BDAD7C8624A62D9AF2 /* Pods_textFields_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_textFields_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +75,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		974AC76626FB27100032B1CF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				974AC76426FB26DE0032B1CF /* TextFieldsStyle.swift */,
+				9788D54C26FE859400C610EE /* TextFieldModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		974AC76726FB27180032B1CF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				974AC76826FB273E0032B1CF /* TextFieldsViewController + UITextFieldDelegate.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		977905C926F689C7005815EA = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +115,8 @@
 			children = (
 				977905D526F689C7005815EA /* AppDelegate.swift */,
 				977905D726F689C7005815EA /* SceneDelegate.swift */,
+				974AC76726FB27180032B1CF /* Extensions */,
+				974AC76626FB27100032B1CF /* Models */,
 				97AA949026F910C600D000BE /* Controllers */,
 				97AA949126F910D300D000BE /* Views */,
 				97AA949626F9128E00D000BE /* Fonts */,
@@ -100,10 +127,19 @@
 			path = "textFields!";
 			sourceTree = "<group>";
 		};
+		9788D54926FE847B00C610EE /* TextFieldView */ = {
+			isa = PBXGroup;
+			children = (
+				97AA949226F910F800D000BE /* TextFieldView.swift */,
+				97AA949426F9110F00D000BE /* TextFieldView.xib */,
+			);
+			path = TextFieldView;
+			sourceTree = "<group>";
+		};
 		97AA949026F910C600D000BE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				977905D926F689C7005815EA /* ViewController.swift */,
+				977905D926F689C7005815EA /* TextFieldsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -112,8 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				977905DB26F689C7005815EA /* Main.storyboard */,
-				97AA949226F910F800D000BE /* ResuableCustomTextFieldView.swift */,
-				97AA949426F9110F00D000BE /* ResuableCustomTextFieldView.xib */,
+				9788D54A26FE850800C610EE /* CustomTextField.swift */,
+				9788D54926FE847B00C610EE /* TextFieldView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,7 +226,7 @@
 				977905E226F689C8005815EA /* LaunchScreen.storyboard in Resources */,
 				97AA949826F912A300D000BE /* SF-Pro-Display-Bold.otf in Resources */,
 				977905DF26F689C8005815EA /* Assets.xcassets in Resources */,
-				97AA949526F9110F00D000BE /* ResuableCustomTextFieldView.xib in Resources */,
+				97AA949526F9110F00D000BE /* TextFieldView.xib in Resources */,
 				97AA949A26F912AE00D000BE /* SF-Pro-Display-Regular.otf in Resources */,
 				977905DD26F689C7005815EA /* Main.storyboard in Resources */,
 			);
@@ -262,9 +298,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				977905DA26F689C7005815EA /* ViewController.swift in Sources */,
+				9788D54B26FE850800C610EE /* CustomTextField.swift in Sources */,
+				9788D54D26FE859400C610EE /* TextFieldModel.swift in Sources */,
+				977905DA26F689C7005815EA /* TextFieldsViewController.swift in Sources */,
 				977905D626F689C7005815EA /* AppDelegate.swift in Sources */,
-				97AA949326F910F800D000BE /* ResuableCustomTextFieldView.swift in Sources */,
+				97AA949326F910F800D000BE /* TextFieldView.swift in Sources */,
+				974AC76926FB273E0032B1CF /* TextFieldsViewController + UITextFieldDelegate.swift in Sources */,
+				974AC76526FB26DE0032B1CF /* TextFieldsStyle.swift in Sources */,
 				977905D826F689C7005815EA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
