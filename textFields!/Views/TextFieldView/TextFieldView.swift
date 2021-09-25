@@ -10,21 +10,15 @@ import SnapKit
 
 class TextFieldView: UIView {
 
-    @IBOutlet weak var textField: CustomTextField!
-    @IBOutlet weak var leftLabel: UILabel!
-    @IBOutlet weak var rightLabel: UILabel!
-    @IBOutlet weak var score: UILabel!
-
-    var firstLabel = UILabel()
-    var secondLabel = UILabel()
-    var thirdLabel = UILabel()
-    var lastLabel = UILabel()
+    @IBOutlet weak var txtField: CustomTextField!
+    @IBOutlet weak var txtFieldTitle: UILabel!
+    @IBOutlet weak var inputLimitLabel: UILabel!
 
     let nibName = "TextFieldView"
     var contentView: UIView?
     var model = TextFieldModel()
 
-    var fieldStyle: TextFieldsStyle = .noDigits {
+    var fieldStyle: TextFieldsSettings = .noDigits {
         didSet {
             makeFieldSettings()
         }
@@ -47,26 +41,26 @@ class TextFieldView: UIView {
     private func makeFieldSettings() {
         switch fieldStyle {
         case .noDigits:
-            leftLabel.text = fieldStyle.title
-            textField.placeholder = fieldStyle.placeholder
-            score.isHidden = true
+            txtFieldTitle.text = fieldStyle.title
+            txtField.placeholder = fieldStyle.placeholder
+            inputLimitLabel.isHidden = true
         case .inputLimit:
-            leftLabel.text = fieldStyle.title
-            textField.placeholder = fieldStyle.placeholder
-            score.text = String(model.inputLimit)
+            txtFieldTitle.text = fieldStyle.title
+            txtField.placeholder = fieldStyle.placeholder
+            inputLimitLabel.text = String(model.inputLimit)
         case .onlyCharacters:
-            leftLabel.text = fieldStyle.title
-            textField.placeholder = fieldStyle.placeholder
-            score.isHidden = true
+            txtFieldTitle.text = fieldStyle.title
+            txtField.placeholder = fieldStyle.placeholder
+            inputLimitLabel.isHidden = true
         case .link:
-            leftLabel.text = fieldStyle.title
-            textField.placeholder = fieldStyle.placeholder
-            score.isHidden = true
+            txtFieldTitle.text = fieldStyle.title
+            txtField.placeholder = fieldStyle.placeholder
+            inputLimitLabel.isHidden = true
         case .validationRules:
-            leftLabel.text = fieldStyle.title
-            textField.placeholder = fieldStyle.placeholder
-            score.isHidden = true
-            textField.hasValidationRules = true
+            txtFieldTitle.text = fieldStyle.title
+            txtField.placeholder = fieldStyle.placeholder
+            inputLimitLabel.isHidden = true
+            txtField.hasValidationRules = true
         }
     }
 }

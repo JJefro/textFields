@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TextFieldsStyle {
+enum TextFieldsSettings {
     case noDigits
     case inputLimit
     case onlyCharacters

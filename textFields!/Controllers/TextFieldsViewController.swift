@@ -14,17 +14,17 @@ class TextFieldsViewController: UIViewController {
     @IBOutlet weak var onlyCharactersField: TextFieldView!
     @IBOutlet weak var linkField: TextFieldView!
     @IBOutlet weak var validationRulesField: TextFieldView!
-    
+
     var model = TextFieldModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        noDigitsField.textField.delegate = self
-        inputLimitField.textField.delegate = self
-        onlyCharactersField.textField.delegate = self
-        linkField.textField.delegate = self
-        validationRulesField.textField.delegate = self
+        noDigitsField.txtField.delegate = self
+        inputLimitField.txtField.delegate = self
+        onlyCharactersField.txtField.delegate = self
+        linkField.txtField.delegate = self
+        validationRulesField.txtField.delegate = self
 
         noDigitsField.fieldStyle = .noDigits
         inputLimitField.fieldStyle = .inputLimit
@@ -32,29 +32,30 @@ class TextFieldsViewController: UIViewController {
         linkField.fieldStyle = .link
         validationRulesField.fieldStyle = .validationRules
 
-        validationRulesField.textField.addTarget(self, action: #selector(TextFieldsViewController.textFieldDidChange(_:)), for: .editingChanged)
+        validationRulesField.txtField.addTarget(self, action: #selector(TextFieldsViewController.textFieldDidChange(_:)), for: .editingChanged)
     }
 
     func updateFieldSettingsInModel() {
-        if noDigitsField.textField.isSelected {
+        if noDigitsField.txtField.isSelected {
             model.fieldSettings = .noDigits
-        } else if inputLimitField.textField.isSelected {
+        } else if inputLimitField.txtField.isSelected {
             model.fieldSettings = .inputLimit
-        } else if onlyCharactersField.textField.isSelected {
+        } else if onlyCharactersField.txtField.isSelected {
             model.fieldSettings = .onlyCharacters
-        } else if linkField.textField.isSelected {
+        } else if linkField.txtField.isSelected {
             model.fieldSettings = .link
-        } else if validationRulesField.textField.isSelected {
+        } else if validationRulesField.txtField.isSelected {
             model.fieldSettings = .validationRules
         }
     }
+
     func updateLimitedInputCounter() {
         if model.inputLimit < 0 {
-            inputLimitField.textField.isLimited = true
-            inputLimitField.score.textColor = UIColor.red
+            inputLimitField.txtField.isLimited = true
+            inputLimitField.inputLimitLabel.textColor = UIColor.red
         } else {
-            inputLimitField.textField.isLimited = false
-            inputLimitField.score.textColor = UIColor.black
+            inputLimitField.txtField.isLimited = false
+            inputLimitField.inputLimitLabel.textColor = UIColor.black
         }
     }
 }

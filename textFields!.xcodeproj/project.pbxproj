@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		974AC76526FB26DE0032B1CF /* TextFieldsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974AC76426FB26DE0032B1CF /* TextFieldsStyle.swift */; };
+		974AC76526FB26DE0032B1CF /* TextFieldsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974AC76426FB26DE0032B1CF /* TextFieldsSettings.swift */; };
 		974AC76926FB273E0032B1CF /* TextFieldsViewController + UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974AC76826FB273E0032B1CF /* TextFieldsViewController + UITextFieldDelegate.swift */; };
 		977905D626F689C7005815EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977905D526F689C7005815EA /* AppDelegate.swift */; };
 		977905D826F689C7005815EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977905D726F689C7005815EA /* SceneDelegate.swift */; };
@@ -26,7 +26,7 @@
 
 /* Begin PBXFileReference section */
 		96688C0FF955DE1D627D7E2A /* Pods-textFields!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-textFields!.release.xcconfig"; path = "Target Support Files/Pods-textFields!/Pods-textFields!.release.xcconfig"; sourceTree = "<group>"; };
-		974AC76426FB26DE0032B1CF /* TextFieldsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsStyle.swift; sourceTree = "<group>"; };
+		974AC76426FB26DE0032B1CF /* TextFieldsSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsSettings.swift; sourceTree = "<group>"; };
 		974AC76826FB273E0032B1CF /* TextFieldsViewController + UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFieldsViewController + UITextFieldDelegate.swift"; sourceTree = "<group>"; };
 		977905D226F689C7005815EA /* textFields!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "textFields!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		977905D526F689C7005815EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 		974AC76626FB27100032B1CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				974AC76426FB26DE0032B1CF /* TextFieldsStyle.swift */,
+				974AC76426FB26DE0032B1CF /* TextFieldsSettings.swift */,
 				9788D54C26FE859400C610EE /* TextFieldModel.swift */,
 			);
 			path = Models;
@@ -304,7 +304,7 @@
 				977905D626F689C7005815EA /* AppDelegate.swift in Sources */,
 				97AA949326F910F800D000BE /* TextFieldView.swift in Sources */,
 				974AC76926FB273E0032B1CF /* TextFieldsViewController + UITextFieldDelegate.swift in Sources */,
-				974AC76526FB26DE0032B1CF /* TextFieldsStyle.swift in Sources */,
+				974AC76526FB26DE0032B1CF /* TextFieldsSettings.swift in Sources */,
 				977905D826F689C7005815EA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
