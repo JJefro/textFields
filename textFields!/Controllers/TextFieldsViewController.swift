@@ -32,6 +32,8 @@ class TextFieldsViewController: UIViewController {
         linkField.fieldStyle = .link
         validationRulesField.fieldStyle = .validationRules
 
+        inputLimitField.txtField.addTarget(self, action: #selector(TextFieldsViewController.textFieldDidChange(_:)), for: .editingChanged)
+        onlyCharactersField.txtField.addTarget(self, action: #selector(TextFieldsViewController.textFieldDidChange(_:)), for: .editingChanged)
         validationRulesField.txtField.addTarget(self, action: #selector(TextFieldsViewController.textFieldDidChange(_:)), for: .editingChanged)
     }
 
@@ -53,6 +55,7 @@ class TextFieldsViewController: UIViewController {
         if model.inputLimit < 0 {
             inputLimitField.txtField.isLimited = true
             inputLimitField.inputLimitLabel.textColor = UIColor.red
+
         } else {
             inputLimitField.txtField.isLimited = false
             inputLimitField.inputLimitLabel.textColor = UIColor.black

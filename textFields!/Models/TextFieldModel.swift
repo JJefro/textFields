@@ -12,21 +12,53 @@ class TextFieldModel {
 
     var fieldSettings: TextFieldsSettings = .noDigits
 
-    var inputLimit = 10 /// Limitation of characters count for the input field
-
+    // MARK: - noDigitsField
     func ignoreDigits(input: String) -> Bool {
         let ignoredCharacters = CharacterSet.decimalDigits
         let characterSet = CharacterSet(charactersIn: input)
-        return !characterSet.isSubset(of: ignoredCharacters)
+        return input.isEmpty || !characterSet.isSubset(of: ignoredCharacters)
     }
 
-    func checkLimitInput(length: Int) -> Int {
+    // MARK: - inputLimitField
+    var inputLimit = 10
+    func updateLimitInput(length: Int) -> Int {
         inputLimit = 10 - length
         return inputLimit
     }
 
-    func isOverlyCharCount(charCount: Int) -> Bool {
-        return charCount >= 8
+    func changeTextColor(text: String) -> NSMutableAttributedString {
+        let lengthOfRedText = text.count - 10
+        let range = NSRange(location: 10, length: lengthOfRedText)
+        let string = NSAttributedString(string: text)
+        let attributedString = NSMutableAttributedString(attributedString: string)
+        attributedString.addAttribute(.foregroundColor, value: UIColor.red, range: range)
+        return attributedString
+    }
+
+    // MARK: - onlyCharactersField
+    let separator = "-"
+    let separatorIndex = 5
+    var isSeparatorAdded = false
+    func setAllowedCharacters(input: String, length: Int) -> Bool {
+        if length <= 5 {
+            isSeparatorAdded = false
+            let allowedCharacters = CharacterSet.letters
+            let typedCharacterSet = CharacterSet(charactersIn: input)
+            return allowedCharacters.isSuperset(of: typedCharacterSet)
+        } else if length <= 11 {
+            isSeparatorAdded = true
+            let allowedCharacters = CharacterSet.decimalDigits
+            let typedCharacterSet = CharacterSet(charactersIn: input)
+            return input.isEmpty || allowedCharacters.isSuperset(of: typedCharacterSet)
+        }
+        return false
+    }
+
+    // MARK: - validationRulesField
+
+    private let requiredQuantity = 8
+    func hasRequiredQuantityOfCharacters(charCount: Int) -> Bool {
+        return charCount >= requiredQuantity
     }
 
     func isContainsDigit(text: String) -> Bool {

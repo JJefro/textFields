@@ -18,18 +18,18 @@ class CustomTextField: UITextField {
     private var progressView = UIProgressView()
 
     private var progressLineHeight = 7
-    private var progressLineCornerRadius: CGFloat = 15
+    private var progressLineCornerRadius: CGFloat = 10
     private var validationRulesTextSize: CGFloat = 13
     private var stepInPercentageTerms: Float = 0.25 /// Execution of one rule as a percentage
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
+        self.clipsToBounds = true
         layer.borderWidth = 1
         layer.cornerRadius = 10
         layer.borderColor = UIColor.gray.cgColor
     }
-
     /// When progress has changed, we change progress line length and progressTintColor with animation
     private var progress: Float = 0 {
         didSet {
@@ -55,7 +55,6 @@ class CustomTextField: UITextField {
 
     @IBInspectable var isLimited: Bool = false {
         didSet {
-            self.textColor = isLimited ? UIColor.red : UIColor.black
             self.layer.borderColor = isLimited ? UIColor.red.cgColor : UIColor.blue.cgColor
         }
     }
@@ -78,6 +77,7 @@ class CustomTextField: UITextField {
 
     private func makeProgressViewConstraints() {
         progressView.trackTintColor = UIColor.clear
+        progressView.clipsToBounds = true
         progressView.layer.cornerRadius = progressLineCornerRadius
 
         superview?.addSubview(progressView)
