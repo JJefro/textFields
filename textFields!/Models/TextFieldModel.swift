@@ -10,13 +10,11 @@ import UIKit
 
 class TextFieldModel {
 
-    var fieldSettings: TextFieldsStyle = .noDigits
-    var currentText = ""
+    var fieldSettings: TextFieldsSettings = .noDigits
 
-    // Settings for inputLimitField
-    var inputLimit = 10
+    var inputLimit = 10 /// Limitation of characters count for the input field
 
-    func ignoringNoDigitsCharacters(input: String) -> Bool {
+    func ignoreDigits(input: String) -> Bool {
         let ignoredCharacters = CharacterSet.decimalDigits
         let characterSet = CharacterSet(charactersIn: input)
         return !characterSet.isSubset(of: ignoredCharacters)
@@ -31,14 +29,15 @@ class TextFieldModel {
         return charCount >= 8
     }
 
-    func isContainDigit(text: String) -> Bool {
+    func isContainsDigit(text: String) -> Bool {
         return text.contains(where: { $0.isNumber })
     }
 
-    func isContainLowercase(text: String) -> Bool {
+    func isContainsLowercase(text: String) -> Bool {
         return text.contains(where: { $0.isLowercase })
     }
-    func isContainUppercase(text: String) -> Bool {
+
+    func isContainsUppercase(text: String) -> Bool {
         return text.contains(where: { $0.isUppercase })
     }
 }

@@ -17,14 +17,18 @@ extension TextFieldsViewController: UITextFieldDelegate {
     }
 
     @objc func textFieldDidChange(_ textField: UITextField) {
-        switch model.fieldSettings {
-        case .validationRules:
-        validationRulesField.textField.isSecureTextEntry = true
-        validationRulesField.textField.isFirstRuleDone = model.isOverlyCharCount(charCount: textField.text!.count)
-        validationRulesField.textField.isSecondRuleDone = model.isContainDigit(text: textField.text!)
-        validationRulesField.textField.isThirdRuleDone = model.isContainLowercase(text: textField.text!)
-        validationRulesField.textField.isLastRuleDone = model.isContainUppercase(text: textField.text!)
-        default: break
+        if model.fieldSettings == .validationRules {
+
+        validationRulesField.txtField.isSecureTextEntry = true
+
+        validationRulesField.txtField.isMinOfCharactersRuleDone =
+            model.isOverlyCharCount(charCount: textField.text!.count)
+        validationRulesField.txtField.isMinOfDigitsRuleDone =
+            model.isContainsDigit(text: textField.text!)
+        validationRulesField.txtField.isMinOfLowercaseCharactersRuleDone =
+            model.isContainsLowercase(text: textField.text!)
+        validationRulesField.txtField.isMinOfUppercaseCharactersRuleDone =
+            model.isContainsUppercase(text: textField.text!)
         }
     }
 
@@ -37,9 +41,9 @@ extension TextFieldsViewController: UITextFieldDelegate {
 
         switch model.fieldSettings {
         case .noDigits:
-            return model.ignoringNoDigitsCharacters(input: string)
+            return model.ignoreDigits(input: string)
         case .inputLimit:
-            inputLimitField.score.text = String(model.checkLimitInput(length: textLength))
+            inputLimitField.inputLimitLabel.text = String(model.checkLimitInput(length: textLength))
             updateLimitedInputCounter()
         case .onlyCharacters:
             break

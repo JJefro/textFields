@@ -10,24 +10,17 @@ import SnapKit
 
 class CustomTextField: UITextField {
 
-    private var firstRule = UILabel()
-    private var secondRule = UILabel()
-    private var thirdRule = UILabel()
-    private var lastRule = UILabel()
-    private var progressLine = UIProgressView()
+    private var minOfCharactersRule = UILabel()
+    private var minOfDigitsRule = UILabel()
+    private var minOfLowercaseCharactersRule = UILabel()
+    private var minOfUppercaseCharactersRule = UILabel()
+
+    private var progressView = UIProgressView()
 
     private var progressLineHeight = 7
-    private var progressLineCornerRadius: CGFloat = 8
+    private var progressLineCornerRadius: CGFloat = 15
     private var validationRulesTextSize: CGFloat = 13
-    // When changing the progress, we change the progress line
-    private var progress: Float = 0 {
-        didSet {
-            let rules = [isFirstRuleDone, isSecondRuleDone, isThirdRuleDone, isLastRuleDone]
-            let completedRules = rules.filter { $0 == true } .count
-            progress = Float(completedRules) * 0.25
-            progressLine.progress = progress
-        }
-    }
+    private var stepInPercentageTerms: Float = 0.25 /// Execution of one rule as a percentage
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -37,11 +30,25 @@ class CustomTextField: UITextField {
         layer.borderColor = UIColor.gray.cgColor
     }
 
+    /// When progress has changed, we change progress line length and progressTintColor with animation
+    private var progress: Float = 0 {
+        didSet {
+            let rules = [isMinOfCharactersRuleDone, isMinOfDigitsRuleDone, isMinOfLowercaseCharactersRuleDone, isMinOfUppercaseCharactersRuleDone]
+            let completedRules = rules.filter { $0 == true } .count
+            progress = Float(completedRules) * stepInPercentageTerms
+
+            UIView.animate(withDuration: 0.9) {
+                self.progressView.setProgress(self.progress, animated: true)
+                self.updateProgressViewTintColor()
+            }
+        }
+    }
+
     @IBInspectable var hasValidationRules: Bool = false {
         didSet {
             if hasValidationRules {
-                makeValidationRulesConstraints()
-                makeProgressLineConstraints()
+                makeValidationLabelsConstraints()
+                makeProgressViewConstraints()
             }
         }
     }
@@ -59,127 +66,119 @@ class CustomTextField: UITextField {
         }
     }
 
-    private func updateProgressLineColor() {
-        if progressLine.progress <= 0.25 {
-            progressLine.progressTintColor = UIColor.red
-        } else if progressLine.progress <= 0.75 {
-            progressLine.progressTintColor = UIColor.orange
+    private func updateProgressViewTintColor() {
+        if progressView.progress <= 0.25 {
+            progressView.progressTintColor = UIColor.red
+        } else if progressView.progress <= 0.75 {
+            progressView.progressTintColor = UIColor.orange
         } else {
-            progressLine.progressTintColor = UIColor.green
+            progressView.progressTintColor = UIColor.green
         }
     }
 
-    private func makeProgressLineConstraints() {
-        progressLine.trackTintColor = UIColor.clear
-        progressLine.layer.cornerRadius = progressLineCornerRadius
+    private func makeProgressViewConstraints() {
+        progressView.trackTintColor = UIColor.clear
+        progressView.layer.cornerRadius = progressLineCornerRadius
 
-        superview?.addSubview(progressLine)
-        progressLine.snp.makeConstraints { make in
+        superview?.addSubview(progressView)
+        progressView.snp.makeConstraints { make in
             make.height.equalTo(progressLineHeight)
             make.bottom.leading.trailing.equalTo(self)
         }
     }
 
     // MARK: - Validation Rules Settings
-    @IBInspectable var isFirstRuleDone: Bool = false {
+    @IBInspectable var isMinOfCharactersRuleDone: Bool = false {
         didSet {
-            if isFirstRuleDone {
-                firstRule.textColor = UIColor.green
-                firstRule.text = "✓ Min length 8 characters."
+            if isMinOfCharactersRuleDone {
+                minOfCharactersRule.textColor = UIColor.green
+                minOfCharactersRule.text = "✓ Min length 8 characters."
                 progress += 1
-                updateProgressLineColor()
             } else {
-                firstRule.textColor = UIColor.black
-                firstRule.text = "- Min length 8 characters."
+                minOfCharactersRule.textColor = UIColor.black
+                minOfCharactersRule.text = "- Min length 8 characters."
                 progress -= 1
-                updateProgressLineColor()
             }
         }
     }
 
-    @IBInspectable var isSecondRuleDone: Bool = false {
+    @IBInspectable var isMinOfDigitsRuleDone: Bool = false {
         didSet {
-            if isSecondRuleDone {
-                secondRule.textColor = UIColor.green
-                secondRule.text = "✓ Min 1 digit,"
+            if isMinOfDigitsRuleDone {
+                minOfDigitsRule.textColor = UIColor.green
+                minOfDigitsRule.text = "✓ Min 1 digit,"
                 progress += 1
-                updateProgressLineColor()
             } else {
-                secondRule.textColor = UIColor.black
-                secondRule.text = "- Min 1 digit,"
+                minOfDigitsRule.textColor = UIColor.black
+                minOfDigitsRule.text = "- Min 1 digit,"
                 progress -= 1
-                updateProgressLineColor()
             }
         }
     }
 
-    @IBInspectable var isThirdRuleDone: Bool = false {
+    @IBInspectable var isMinOfLowercaseCharactersRuleDone: Bool = false {
         didSet {
-            if isThirdRuleDone {
-                thirdRule.textColor = UIColor.green
-                thirdRule.text = "✓ Min 1 lowercase,"
+            if isMinOfLowercaseCharactersRuleDone {
+                minOfLowercaseCharactersRule.textColor = UIColor.green
+                minOfLowercaseCharactersRule.text = "✓ Min 1 lowercase,"
                 progress += 1
-                updateProgressLineColor()
             } else {
-                thirdRule.textColor = UIColor.black
-                thirdRule.text = "- Min 1 lowercase,"
+                minOfLowercaseCharactersRule.textColor = UIColor.black
+                minOfLowercaseCharactersRule.text = "- Min 1 lowercase,"
                 progress -= 1
-                updateProgressLineColor()
             }
         }
     }
 
-    @IBInspectable var isLastRuleDone: Bool = false {
+    @IBInspectable var isMinOfUppercaseCharactersRuleDone: Bool = false {
         didSet {
-            if isLastRuleDone {
-                lastRule.textColor = UIColor.green
-                lastRule.text = "✓ Min 1 capital required."
+            if isMinOfUppercaseCharactersRuleDone {
+                minOfUppercaseCharactersRule.textColor = UIColor.green
+                minOfUppercaseCharactersRule.text = "✓ Min 1 capital required."
                 progress += 1
-                updateProgressLineColor()
             } else {
-                lastRule.textColor = UIColor.black
-                lastRule.text = "- Min 1 capital required."
+                minOfUppercaseCharactersRule.textColor = UIColor.black
+                minOfUppercaseCharactersRule.text = "- Min 1 capital required."
                 progress -= 1
-                updateProgressLineColor()
             }
         }
     }
 
-    // MARK: - Validation Rules Constraints
-    private func makeValidationRulesConstraints() {
+    // MARK: - Validation Labels Constraints
+    private func makeValidationLabelsConstraints() {
         let labelFont = UIFont(name: "SF Pro Display Regular", size: validationRulesTextSize)
         let leadingConstraints = 24
         let topConstraints = -21
 
-        firstRule.text = "- Min length 8 characters."
-        firstRule.font = labelFont
-        superview?.addSubview(firstRule)
-        firstRule.snp.makeConstraints { make in
+        minOfCharactersRule.text = "- Min length 8 characters."
+        minOfCharactersRule.font = labelFont
+        superview?.addSubview(minOfCharactersRule)
+        minOfCharactersRule.snp.makeConstraints { make in
             make.bottom.equalTo(self).inset(topConstraints)
             make.leading.equalToSuperview().inset(leadingConstraints)
         }
 
-        secondRule.text = "- Min 1 digit,"
-        secondRule.font = labelFont
-        superview?.addSubview(secondRule)
-        secondRule.snp.makeConstraints { make in
-            make.bottom.equalTo(firstRule).inset(topConstraints)
+        minOfDigitsRule.text = "- Min 1 digit,"
+        minOfDigitsRule.font = labelFont
+        superview?.addSubview(minOfDigitsRule)
+        minOfDigitsRule.snp.makeConstraints { make in
+            make.bottom.equalTo(minOfCharactersRule).inset(topConstraints)
             make.leading.equalToSuperview().inset(leadingConstraints)
         }
 
-        thirdRule.text = "- Min 1 lowercase,"
-        thirdRule.font = labelFont
-        superview?.addSubview(thirdRule)
-        thirdRule.snp.makeConstraints { make in
-            make.bottom.equalTo(secondRule).inset(topConstraints)
+        minOfLowercaseCharactersRule.text = "- Min 1 lowercase,"
+        minOfLowercaseCharactersRule.font = labelFont
+        superview?.addSubview(minOfLowercaseCharactersRule)
+        minOfLowercaseCharactersRule.snp.makeConstraints { make in
+            make.bottom.equalTo(minOfDigitsRule).inset(topConstraints)
             make.leading.equalToSuperview().inset(leadingConstraints)
         }
 
-        lastRule.text = "- Min 1 capital required."
-        lastRule.font = labelFont
-        superview?.addSubview(lastRule)
-        lastRule.snp.makeConstraints { make in
-            make.bottom.equalTo(thirdRule).inset(topConstraints)
+        minOfUppercaseCharactersRule.text = "- Min 1 capital required."
+        minOfUppercaseCharactersRule.font = labelFont
+        superview?.addSubview(minOfUppercaseCharactersRule)
+        minOfUppercaseCharactersRule.snp.makeConstraints { make in
+            make.bottom.equalTo(minOfLowercaseCharactersRule).inset(topConstraints)
             make.leading.equalToSuperview().inset(leadingConstraints)
         }
     }
