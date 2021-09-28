@@ -18,7 +18,7 @@ class TextFieldView: UIView {
     var contentView: UIView?
     var model = TextFieldModel()
 
-    var fieldStyle: TextFieldsSettings = .noDigits {
+    var fieldSettings: TextFieldsSettings = .noDigits {
         didSet {
             makeFieldSettings()
         }
@@ -39,26 +39,26 @@ class TextFieldView: UIView {
     }
 
     private func makeFieldSettings() {
-        switch fieldStyle {
+        switch fieldSettings {
         case .noDigits:
-            txtFieldTitle.text = fieldStyle.title
-            txtField.placeholder = fieldStyle.placeholder
+            txtFieldTitle.text = fieldSettings.title
+            txtField.placeholder = fieldSettings.placeholder
             inputLimitLabel.isHidden = true
         case .inputLimit:
-            txtFieldTitle.text = fieldStyle.title
-            txtField.placeholder = fieldStyle.placeholder
+            txtFieldTitle.text = fieldSettings.title
+            txtField.placeholder = fieldSettings.placeholder
             inputLimitLabel.text = String(model.inputLimit)
         case .onlyCharacters:
-            txtFieldTitle.text = fieldStyle.title
-            txtField.placeholder = fieldStyle.placeholder
+            txtFieldTitle.text = fieldSettings.title
+            txtField.placeholder = fieldSettings.placeholder
             inputLimitLabel.isHidden = true
         case .link:
-            txtFieldTitle.text = fieldStyle.title
-            txtField.placeholder = fieldStyle.placeholder
+            txtFieldTitle.text = fieldSettings.title
+            txtField.placeholder = fieldSettings.placeholder
             inputLimitLabel.isHidden = true
         case .validationRules:
-            txtFieldTitle.text = fieldStyle.title
-            txtField.placeholder = fieldStyle.placeholder
+            txtFieldTitle.text = fieldSettings.title
+            txtField.placeholder = fieldSettings.placeholder
             inputLimitLabel.isHidden = true
             txtField.hasValidationRules = true
         }

@@ -11,31 +11,44 @@ extension TextFieldsViewController: UITextFieldDelegate {
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.isSelected = true
+        updateFieldSettingsInModel()
     }
+
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.isSelected = false
+        guard let text = textField.text else {return}
+        if model.fieldSettings == .link {
+            if let url = model.checkUrlValidation(input: text) {
+                openLink(url)
+            }
+        }
     }
 
     @objc func textFieldDidChange(_ textField: UITextField) {
+        guard let text = textField.text else {return}
         switch model.fieldSettings {
         case .inputLimit:
-           if model.inputLimit < 0 {
-               inputLimitField.txtField.attributedText = model.changeTextColor(text: textField.text!)
-        }
+            if model.inputLimit < 0 {
+                inputLimitField.txtField.attributedText = model.changeTextColor(text: text)
+            }
+        case .onlyCharacters:
+            if !model.isSeparatorAdded, text.count == model.separatorIndex {
+                onlyCharactersField.txtField.text!.append(model.separator)
+            }
         case .validationRules:
             validationRulesField.txtField.isSecureTextEntry = true
 
             validationRulesField.txtField.isMinOfCharactersRuleDone =
-            model.hasRequiredQuantityOfCharacters(charCount: textField.text!.count)
+            model.hasRequiredQuantityOfCharacters(charCount: text.count)
 
             validationRulesField.txtField.isMinOfDigitsRuleDone =
-            model.isContainsDigit(text: textField.text!)
+            model.isContainsDigit(text: text)
 
             validationRulesField.txtField.isMinOfLowercaseCharactersRuleDone =
-            model.isContainsLowercase(text: textField.text!)
+            model.isContainsLowercase(text: text)
 
             validationRulesField.txtField.isMinOfUppercaseCharactersRuleDone =
-            model.isContainsUppercase(text: textField.text!)
+            model.isContainsUppercase(text: text)
         default: break
         }
     }
@@ -44,21 +57,21 @@ extension TextFieldsViewController: UITextFieldDelegate {
 
         guard let text = textField.text else {fatalError()}
         let textLength = text.count + string.count - range.length
-        updateFieldSettingsInModel()
+        let currentText = text + string
 
         switch model.fieldSettings {
         case .noDigits:
-            return model.ignoreDigits(input: string)
+            return model.ignoreDigits(replacementString: string)
         case .inputLimit:
             inputLimitField.inputLimitLabel.text = String(model.updateLimitInput(length: textLength))
-            updateLimitedInputCounter()
+            updateLimitedInputFieldColor()
         case .onlyCharacters:
-            if !model.isSeparatorAdded, text.count - range.length == model.separatorIndex {
-                onlyCharactersField.txtField.text!.append(model.separator)
-            }
-            return model.setAllowedCharacters(input: string, length: textLength)
+            return model.allowedChar(text: currentText, replacementString: string)
         case .link:
-            break
+            linkField.txtField.autocapitalizationType = .none
+            if linkField.txtField.text!.isEmpty {
+                linkField.txtField.text!.append("https://")
+            }
         default: break
         }
         return true

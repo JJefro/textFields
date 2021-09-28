@@ -17,6 +17,8 @@ class CustomTextField: UITextField {
 
     private var progressView = UIProgressView()
 
+    private let customTextColor = UIColor(named: "TextColor")
+
     private var progressLineHeight = 7
     private var progressLineCornerRadius: CGFloat = 10
     private var validationRulesTextSize: CGFloat = 13
@@ -25,10 +27,10 @@ class CustomTextField: UITextField {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
-        self.clipsToBounds = true
         layer.borderWidth = 1
         layer.cornerRadius = 10
         layer.borderColor = UIColor.gray.cgColor
+        self.clipsToBounds = true
     }
     /// When progress has changed, we change progress line length and progressTintColor with animation
     private var progress: Float = 0 {
@@ -43,6 +45,13 @@ class CustomTextField: UITextField {
             }
         }
     }
+
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+            if action == #selector(UIResponderStandardEditActions.copy(_:)) {
+                return true
+            }
+            return super.canPerformAction(action, withSender: sender)
+        }
 
     @IBInspectable var hasValidationRules: Bool = false {
         didSet {
@@ -95,7 +104,7 @@ class CustomTextField: UITextField {
                 minOfCharactersRule.text = "✓ Min length 8 characters."
                 progress += 1
             } else {
-                minOfCharactersRule.textColor = UIColor.black
+                minOfCharactersRule.textColor = customTextColor
                 minOfCharactersRule.text = "- Min length 8 characters."
                 progress -= 1
             }
@@ -109,7 +118,7 @@ class CustomTextField: UITextField {
                 minOfDigitsRule.text = "✓ Min 1 digit,"
                 progress += 1
             } else {
-                minOfDigitsRule.textColor = UIColor.black
+                minOfDigitsRule.textColor = customTextColor
                 minOfDigitsRule.text = "- Min 1 digit,"
                 progress -= 1
             }
@@ -123,7 +132,7 @@ class CustomTextField: UITextField {
                 minOfLowercaseCharactersRule.text = "✓ Min 1 lowercase,"
                 progress += 1
             } else {
-                minOfLowercaseCharactersRule.textColor = UIColor.black
+                minOfLowercaseCharactersRule.textColor = customTextColor
                 minOfLowercaseCharactersRule.text = "- Min 1 lowercase,"
                 progress -= 1
             }
@@ -137,7 +146,7 @@ class CustomTextField: UITextField {
                 minOfUppercaseCharactersRule.text = "✓ Min 1 capital required."
                 progress += 1
             } else {
-                minOfUppercaseCharactersRule.textColor = UIColor.black
+                minOfUppercaseCharactersRule.textColor = customTextColor
                 minOfUppercaseCharactersRule.text = "- Min 1 capital required."
                 progress -= 1
             }

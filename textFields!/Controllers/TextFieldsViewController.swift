@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class TextFieldsViewController: UIViewController {
     
@@ -26,11 +27,11 @@ class TextFieldsViewController: UIViewController {
         linkField.txtField.delegate = self
         validationRulesField.txtField.delegate = self
 
-        noDigitsField.fieldStyle = .noDigits
-        inputLimitField.fieldStyle = .inputLimit
-        onlyCharactersField.fieldStyle = .onlyCharacters
-        linkField.fieldStyle = .link
-        validationRulesField.fieldStyle = .validationRules
+        noDigitsField.fieldSettings = .noDigits
+        inputLimitField.fieldSettings = .inputLimit
+        onlyCharactersField.fieldSettings = .onlyCharacters
+        linkField.fieldSettings = .link
+        validationRulesField.fieldSettings = .validationRules
 
         inputLimitField.txtField.addTarget(self, action: #selector(TextFieldsViewController.textFieldDidChange(_:)), for: .editingChanged)
         onlyCharactersField.txtField.addTarget(self, action: #selector(TextFieldsViewController.textFieldDidChange(_:)), for: .editingChanged)
@@ -51,14 +52,20 @@ class TextFieldsViewController: UIViewController {
         }
     }
 
-    func updateLimitedInputCounter() {
+    func updateLimitedInputFieldColor() {
         if model.inputLimit < 0 {
             inputLimitField.txtField.isLimited = true
             inputLimitField.inputLimitLabel.textColor = UIColor.red
 
         } else {
             inputLimitField.txtField.isLimited = false
-            inputLimitField.inputLimitLabel.textColor = UIColor.black
+            inputLimitField.inputLimitLabel.textColor = UIColor(named: "TextColor")
         }
+    }
+
+    func openLink(_ stringURL: String) {
+        guard let url = URL(string: stringURL) else {return}
+        let safariVC = SFSafariViewController(url: url)
+        present(safariVC, animated: true, completion: nil)
     }
 }
