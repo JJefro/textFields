@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		974AC76526FB26DE0032B1CF /* TextFieldsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974AC76426FB26DE0032B1CF /* TextFieldsSettings.swift */; };
 		974AC76926FB273E0032B1CF /* TextFieldsViewController + UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974AC76826FB273E0032B1CF /* TextFieldsViewController + UITextFieldDelegate.swift */; };
+		9770ECD327035B5E0033120D /* NoDigitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9770ECD227035B5E0033120D /* NoDigitsViewController.swift */; };
+		9770ECD527035B780033120D /* InputLimitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9770ECD427035B780033120D /* InputLimitViewController.swift */; };
+		9770ECD727035B8F0033120D /* OnlyCharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9770ECD627035B8F0033120D /* OnlyCharactersViewController.swift */; };
+		9770ECD927035BAA0033120D /* LinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9770ECD827035BAA0033120D /* LinkViewController.swift */; };
+		9770ECDB27035BC10033120D /* ValidationRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9770ECDA27035BC10033120D /* ValidationRulesViewController.swift */; };
+		9770ECDD27035BE10033120D /* CardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9770ECDC27035BE10033120D /* CardButton.swift */; };
+		9770ECE02703631D0033120D /* NoDigitsViewController + UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9770ECDF2703631D0033120D /* NoDigitsViewController + UITextFieldDelegate.swift */; };
+		9770ECE2270363400033120D /* InputLimitViewController + UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9770ECE1270363400033120D /* InputLimitViewController + UITextFieldDelegate.swift */; };
+		9770ECE4270363660033120D /* OnlyCharactersViewController + UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9770ECE3270363660033120D /* OnlyCharactersViewController + UITextFieldDelegate.swift */; };
+		9770ECE6270363820033120D /* LinkViewController + UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9770ECE5270363820033120D /* LinkViewController + UITextFieldDelegate.swift */; };
+		9770ECE8270363B70033120D /* ValidationRulesViewController + UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9770ECE7270363B70033120D /* ValidationRulesViewController + UITextFieldDelegate.swift */; };
 		977905D626F689C7005815EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977905D526F689C7005815EA /* AppDelegate.swift */; };
 		977905D826F689C7005815EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977905D726F689C7005815EA /* SceneDelegate.swift */; };
 		977905DA26F689C7005815EA /* TextFieldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977905D926F689C7005815EA /* TextFieldsViewController.swift */; };
@@ -28,6 +39,17 @@
 		96688C0FF955DE1D627D7E2A /* Pods-textFields!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-textFields!.release.xcconfig"; path = "Target Support Files/Pods-textFields!/Pods-textFields!.release.xcconfig"; sourceTree = "<group>"; };
 		974AC76426FB26DE0032B1CF /* TextFieldsSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsSettings.swift; sourceTree = "<group>"; };
 		974AC76826FB273E0032B1CF /* TextFieldsViewController + UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFieldsViewController + UITextFieldDelegate.swift"; sourceTree = "<group>"; };
+		9770ECD227035B5E0033120D /* NoDigitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDigitsViewController.swift; sourceTree = "<group>"; };
+		9770ECD427035B780033120D /* InputLimitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLimitViewController.swift; sourceTree = "<group>"; };
+		9770ECD627035B8F0033120D /* OnlyCharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyCharactersViewController.swift; sourceTree = "<group>"; };
+		9770ECD827035BAA0033120D /* LinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkViewController.swift; sourceTree = "<group>"; };
+		9770ECDA27035BC10033120D /* ValidationRulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationRulesViewController.swift; sourceTree = "<group>"; };
+		9770ECDC27035BE10033120D /* CardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
+		9770ECDF2703631D0033120D /* NoDigitsViewController + UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoDigitsViewController + UITextFieldDelegate.swift"; sourceTree = "<group>"; };
+		9770ECE1270363400033120D /* InputLimitViewController + UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputLimitViewController + UITextFieldDelegate.swift"; sourceTree = "<group>"; };
+		9770ECE3270363660033120D /* OnlyCharactersViewController + UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnlyCharactersViewController + UITextFieldDelegate.swift"; sourceTree = "<group>"; };
+		9770ECE5270363820033120D /* LinkViewController + UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LinkViewController + UITextFieldDelegate.swift"; sourceTree = "<group>"; };
+		9770ECE7270363B70033120D /* ValidationRulesViewController + UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ValidationRulesViewController + UITextFieldDelegate.swift"; sourceTree = "<group>"; };
 		977905D226F689C7005815EA /* textFields!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "textFields!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		977905D526F689C7005815EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		977905D726F689C7005815EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,8 +110,21 @@
 			isa = PBXGroup;
 			children = (
 				974AC76826FB273E0032B1CF /* TextFieldsViewController + UITextFieldDelegate.swift */,
+				9770ECDF2703631D0033120D /* NoDigitsViewController + UITextFieldDelegate.swift */,
+				9770ECE1270363400033120D /* InputLimitViewController + UITextFieldDelegate.swift */,
+				9770ECE3270363660033120D /* OnlyCharactersViewController + UITextFieldDelegate.swift */,
+				9770ECE5270363820033120D /* LinkViewController + UITextFieldDelegate.swift */,
+				9770ECE7270363B70033120D /* ValidationRulesViewController + UITextFieldDelegate.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9770ECDE2703607A0033120D /* CustomControls */ = {
+			isa = PBXGroup;
+			children = (
+				9770ECDC27035BE10033120D /* CardButton.swift */,
+			);
+			path = CustomControls;
 			sourceTree = "<group>";
 		};
 		977905C926F689C7005815EA = {
@@ -115,6 +150,7 @@
 			children = (
 				977905D526F689C7005815EA /* AppDelegate.swift */,
 				977905D726F689C7005815EA /* SceneDelegate.swift */,
+				9770ECDE2703607A0033120D /* CustomControls */,
 				974AC76726FB27180032B1CF /* Extensions */,
 				974AC76626FB27100032B1CF /* Models */,
 				97AA949026F910C600D000BE /* Controllers */,
@@ -140,6 +176,11 @@
 			isa = PBXGroup;
 			children = (
 				977905D926F689C7005815EA /* TextFieldsViewController.swift */,
+				9770ECD227035B5E0033120D /* NoDigitsViewController.swift */,
+				9770ECD427035B780033120D /* InputLimitViewController.swift */,
+				9770ECD627035B8F0033120D /* OnlyCharactersViewController.swift */,
+				9770ECD827035BAA0033120D /* LinkViewController.swift */,
+				9770ECDA27035BC10033120D /* ValidationRulesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -298,12 +339,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9770ECD327035B5E0033120D /* NoDigitsViewController.swift in Sources */,
 				9788D54B26FE850800C610EE /* CustomTextField.swift in Sources */,
+				9770ECE8270363B70033120D /* ValidationRulesViewController + UITextFieldDelegate.swift in Sources */,
+				9770ECDB27035BC10033120D /* ValidationRulesViewController.swift in Sources */,
 				9788D54D26FE859400C610EE /* TextFieldModel.swift in Sources */,
+				9770ECD527035B780033120D /* InputLimitViewController.swift in Sources */,
 				977905DA26F689C7005815EA /* TextFieldsViewController.swift in Sources */,
+				9770ECD727035B8F0033120D /* OnlyCharactersViewController.swift in Sources */,
 				977905D626F689C7005815EA /* AppDelegate.swift in Sources */,
 				97AA949326F910F800D000BE /* TextFieldView.swift in Sources */,
+				9770ECE6270363820033120D /* LinkViewController + UITextFieldDelegate.swift in Sources */,
+				9770ECD927035BAA0033120D /* LinkViewController.swift in Sources */,
+				9770ECE4270363660033120D /* OnlyCharactersViewController + UITextFieldDelegate.swift in Sources */,
+				9770ECE2270363400033120D /* InputLimitViewController + UITextFieldDelegate.swift in Sources */,
 				974AC76926FB273E0032B1CF /* TextFieldsViewController + UITextFieldDelegate.swift in Sources */,
+				9770ECDD27035BE10033120D /* CardButton.swift in Sources */,
+				9770ECE02703631D0033120D /* NoDigitsViewController + UITextFieldDelegate.swift in Sources */,
 				974AC76526FB26DE0032B1CF /* TextFieldsSettings.swift in Sources */,
 				977905D826F689C7005815EA /* SceneDelegate.swift in Sources */,
 			);

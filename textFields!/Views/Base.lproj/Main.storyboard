@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -82,12 +83,32 @@
                                     <constraint firstAttribute="trailing" secondItem="drH-M9-F7V" secondAttribute="trailing" id="tGa-Ot-r9W"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btG-cU-YmK" customClass="CardButton" customModule="textFields_" customModuleProvider="target">
+                                <rect key="frame" x="157" y="812" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="7az-zq-vF9"/>
+                                    <constraint firstAttribute="height" constant="40" id="ubk-Tt-a7n"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Go" cornerStyle="capsule">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" name="ButtonBackgroundColor"/>
+                                        <color key="strokeColor" name="TextColor"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="yAs-6W-wte" kind="presentation" id="kH3-R6-0pU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Da-Y9-JR7" secondAttribute="trailing" id="01e-qb-a5G"/>
-                            <constraint firstItem="8Da-Y9-JR7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="92" id="H9N-aT-wE1"/>
+                            <constraint firstItem="8Da-Y9-JR7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" priority="250" constant="92" id="H9N-aT-wE1"/>
+                            <constraint firstItem="btG-cU-YmK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TKZ-0W-nXB"/>
+                            <constraint firstItem="btG-cU-YmK" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-10" id="XLG-Yv-LNf"/>
                             <constraint firstItem="8Da-Y9-JR7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bci-9a-Szl"/>
                         </constraints>
                     </view>
@@ -103,8 +124,245 @@
             </objects>
             <point key="canvasLocation" x="97" y="78"/>
         </scene>
+        <!--InputLimit-->
+        <scene sceneID="rQC-bE-ojN">
+            <objects>
+                <viewController id="VgE-qQ-WOA" customClass="InputLimitViewController" customModule="textFields_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rOs-lK-BVk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input Limit Field" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npi-MC-yRj">
+                                <rect key="frame" x="85" y="92" width="244.5" height="41"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
+                                <color key="textColor" name="TextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hec-wb-1Yp" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="321" width="414" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="ISM-CP-Itc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2G4-IK-tnD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Hec-wb-1Yp" firstAttribute="centerY" secondItem="rOs-lK-BVk" secondAttribute="centerY" id="DSW-4p-nfg"/>
+                            <constraint firstItem="2G4-IK-tnD" firstAttribute="trailing" secondItem="Hec-wb-1Yp" secondAttribute="trailing" id="Wvp-iD-KpO"/>
+                            <constraint firstItem="Hec-wb-1Yp" firstAttribute="leading" secondItem="2G4-IK-tnD" secondAttribute="leading" id="c1P-cN-WTm"/>
+                            <constraint firstItem="Hec-wb-1Yp" firstAttribute="centerX" secondItem="rOs-lK-BVk" secondAttribute="centerX" id="dHz-Ef-BLN"/>
+                            <constraint firstItem="npi-MC-yRj" firstAttribute="top" secondItem="2G4-IK-tnD" secondAttribute="top" constant="92" id="mAE-IO-9K1"/>
+                            <constraint firstItem="npi-MC-yRj" firstAttribute="centerX" secondItem="rOs-lK-BVk" secondAttribute="centerX" id="rGQ-zF-fpQ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="InputLimit" id="Vx2-gB-lIY"/>
+                    <connections>
+                        <outlet property="inputLimitField" destination="Hec-wb-1Yp" id="CeD-Qp-uVQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OSj-dL-mDd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-633" y="1444"/>
+        </scene>
+        <!--NoDigits-->
+        <scene sceneID="sEz-Fh-ItE">
+            <objects>
+                <viewController id="spq-s4-UCe" customClass="NoDigitsViewController" customModule="textFields_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R0R-Uz-crh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Digits Field" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYh-ut-h7a">
+                                <rect key="frame" x="96.5" y="92" width="221.5" height="41"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
+                                <color key="textColor" name="TextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yth-Ov-xah" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="321" width="414" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="f1s-Ra-YMk"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5DY-mf-Okz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yth-Ov-xah" firstAttribute="centerY" secondItem="R0R-Uz-crh" secondAttribute="centerY" id="PvX-Pu-VAC"/>
+                            <constraint firstItem="jYh-ut-h7a" firstAttribute="top" secondItem="5DY-mf-Okz" secondAttribute="top" constant="92" id="X7T-5P-wy2"/>
+                            <constraint firstItem="yth-Ov-xah" firstAttribute="centerX" secondItem="R0R-Uz-crh" secondAttribute="centerX" id="dU1-e0-wtO"/>
+                            <constraint firstItem="yth-Ov-xah" firstAttribute="leading" secondItem="5DY-mf-Okz" secondAttribute="leading" id="eGS-98-wD3"/>
+                            <constraint firstItem="jYh-ut-h7a" firstAttribute="centerX" secondItem="R0R-Uz-crh" secondAttribute="centerX" id="mwV-RX-Xrq"/>
+                            <constraint firstItem="5DY-mf-Okz" firstAttribute="trailing" secondItem="yth-Ov-xah" secondAttribute="trailing" id="n1O-kM-oM9"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="NoDigits" id="k84-W6-nya"/>
+                    <connections>
+                        <outlet property="noDigitsField" destination="yth-Ov-xah" id="ffm-f3-lwz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pMY-qN-C0a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1371" y="1444"/>
+        </scene>
+        <!--OnlyCharacters-->
+        <scene sceneID="2Yl-A2-yqG">
+            <objects>
+                <viewController id="DLF-cM-Mg4" customClass="OnlyCharactersViewController" customModule="textFields_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Ha-dc-zaQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Only Characters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybO-WQ-dPM">
+                                <rect key="frame" x="81.5" y="92" width="251" height="41"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
+                                <color key="textColor" name="TextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EyN-Vy-VgZ" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="321" width="414" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Y8b-Dh-Zfp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zmX-3d-Pk6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EyN-Vy-VgZ" firstAttribute="leading" secondItem="zmX-3d-Pk6" secondAttribute="leading" id="AVe-6S-38h"/>
+                            <constraint firstItem="EyN-Vy-VgZ" firstAttribute="centerY" secondItem="4Ha-dc-zaQ" secondAttribute="centerY" id="FwB-Ul-HqB"/>
+                            <constraint firstItem="ybO-WQ-dPM" firstAttribute="centerX" secondItem="4Ha-dc-zaQ" secondAttribute="centerX" id="HK0-cR-geu"/>
+                            <constraint firstItem="zmX-3d-Pk6" firstAttribute="trailing" secondItem="EyN-Vy-VgZ" secondAttribute="trailing" id="L8Q-4A-1Xx"/>
+                            <constraint firstItem="EyN-Vy-VgZ" firstAttribute="centerX" secondItem="4Ha-dc-zaQ" secondAttribute="centerX" id="jQM-vu-Omt"/>
+                            <constraint firstItem="ybO-WQ-dPM" firstAttribute="top" secondItem="zmX-3d-Pk6" secondAttribute="top" constant="92" id="vPe-12-aBM"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="OnlyCharacters" id="Cj4-6s-puh"/>
+                    <connections>
+                        <outlet property="onlyCharactersField" destination="EyN-Vy-VgZ" id="XJr-eV-GQm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yh5-Cb-JiJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="96" y="1444"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="xuK-of-CYe">
+            <objects>
+                <tabBarController id="yAs-6W-wte" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ucr-Eg-TWY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="spq-s4-UCe" kind="relationship" relationship="viewControllers" id="BTw-LC-5gx"/>
+                        <segue destination="VgE-qQ-WOA" kind="relationship" relationship="viewControllers" id="tbC-rS-Jj4"/>
+                        <segue destination="raD-QM-7rJ" kind="relationship" relationship="viewControllers" id="rjd-uU-WCc"/>
+                        <segue destination="LJc-Vl-d2v" kind="relationship" relationship="viewControllers" id="dQT-Ru-r64"/>
+                        <segue destination="DLF-cM-Mg4" kind="relationship" relationship="viewControllers" id="arJ-Rx-Hze"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WPU-FJ-y5V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="96" y="767"/>
+        </scene>
+        <!--Link-->
+        <scene sceneID="8TK-AX-kLZ">
+            <objects>
+                <viewController id="raD-QM-7rJ" customClass="LinkViewController" customModule="textFields_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Vv-7R-P9c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link Field" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ow4-6L-IYT">
+                                <rect key="frame" x="134.5" y="92" width="145.5" height="41"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
+                                <color key="textColor" name="TextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m5w-rY-fT2" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="321" width="414" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="7sX-Lg-S1z"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bxW-53-171"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="m5w-rY-fT2" firstAttribute="leading" secondItem="bxW-53-171" secondAttribute="leading" id="0xV-PK-RLB"/>
+                            <constraint firstItem="bxW-53-171" firstAttribute="trailing" secondItem="m5w-rY-fT2" secondAttribute="trailing" id="3p3-tq-NN5"/>
+                            <constraint firstItem="ow4-6L-IYT" firstAttribute="centerX" secondItem="1Vv-7R-P9c" secondAttribute="centerX" id="oGg-h2-J4P"/>
+                            <constraint firstItem="m5w-rY-fT2" firstAttribute="centerY" secondItem="1Vv-7R-P9c" secondAttribute="centerY" id="rAH-yw-U4N"/>
+                            <constraint firstItem="m5w-rY-fT2" firstAttribute="centerX" secondItem="1Vv-7R-P9c" secondAttribute="centerX" id="uTW-KU-YuO"/>
+                            <constraint firstItem="ow4-6L-IYT" firstAttribute="top" secondItem="bxW-53-171" secondAttribute="top" constant="92" id="xkO-uB-Dl4"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Link" id="NDy-bR-WRV"/>
+                    <connections>
+                        <outlet property="linkField" destination="m5w-rY-fT2" id="aTF-TX-H9E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qav-Df-JeI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="803" y="1444"/>
+        </scene>
+        <!--ValidationRules-->
+        <scene sceneID="iJh-VQ-TaB">
+            <objects>
+                <viewController id="LJc-Vl-d2v" customClass="ValidationRulesViewController" customModule="textFields_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vtb-HR-vDh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Validation Rules" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoW-v6-QXu">
+                                <rect key="frame" x="83.5" y="92" width="247" height="41"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
+                                <color key="textColor" name="TextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="47c-VS-NIY" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="321" width="414" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="miu-lR-gIR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RL0-se-CEF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="47c-VS-NIY" firstAttribute="centerY" secondItem="Vtb-HR-vDh" secondAttribute="centerY" id="Hd1-0v-rEy"/>
+                            <constraint firstItem="47c-VS-NIY" firstAttribute="centerX" secondItem="Vtb-HR-vDh" secondAttribute="centerX" id="Scl-Qp-rrp"/>
+                            <constraint firstItem="MoW-v6-QXu" firstAttribute="top" secondItem="RL0-se-CEF" secondAttribute="top" constant="92" id="cPG-8U-OQh"/>
+                            <constraint firstItem="RL0-se-CEF" firstAttribute="trailing" secondItem="47c-VS-NIY" secondAttribute="trailing" id="hUT-jk-fMN"/>
+                            <constraint firstItem="MoW-v6-QXu" firstAttribute="centerX" secondItem="Vtb-HR-vDh" secondAttribute="centerX" id="qGt-0B-DnQ"/>
+                            <constraint firstItem="47c-VS-NIY" firstAttribute="leading" secondItem="RL0-se-CEF" secondAttribute="leading" id="xah-Kp-6i8"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="ValidationRules" id="HOA-Mh-rUh"/>
+                    <connections>
+                        <outlet property="validationRulesField" destination="47c-VS-NIY" id="hY8-t1-YW8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0A1-dp-fIH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1530" y="1444"/>
+        </scene>
     </scenes>
     <resources>
+        <namedColor name="ButtonBackgroundColor">
+            <color red="0.3803921938" green="0.3058823645" blue="0.50980395079999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="TextColor">
+            <color red="0.109803915" green="0.1176470518" blue="0.12549020350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
