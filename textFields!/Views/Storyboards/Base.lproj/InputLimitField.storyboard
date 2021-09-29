@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VgE-qQ-WOA">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Bold.otf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--InputLimit-->
+        <scene sceneID="rQC-bE-ojN">
+            <objects>
+                <viewController id="VgE-qQ-WOA" customClass="InputLimitViewController" customModule="textFields_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rOs-lK-BVk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input Limit Field" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npi-MC-yRj">
+                                <rect key="frame" x="85" y="136" width="244.5" height="41"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
+                                <color key="textColor" name="TextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hec-wb-1Yp" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="348" width="414" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="ISM-CP-Itc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2G4-IK-tnD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Hec-wb-1Yp" firstAttribute="centerY" secondItem="rOs-lK-BVk" secondAttribute="centerY" id="DSW-4p-nfg"/>
+                            <constraint firstItem="2G4-IK-tnD" firstAttribute="trailing" secondItem="Hec-wb-1Yp" secondAttribute="trailing" id="Wvp-iD-KpO"/>
+                            <constraint firstItem="Hec-wb-1Yp" firstAttribute="leading" secondItem="2G4-IK-tnD" secondAttribute="leading" id="c1P-cN-WTm"/>
+                            <constraint firstItem="Hec-wb-1Yp" firstAttribute="centerX" secondItem="rOs-lK-BVk" secondAttribute="centerX" id="dHz-Ef-BLN"/>
+                            <constraint firstItem="npi-MC-yRj" firstAttribute="top" secondItem="2G4-IK-tnD" secondAttribute="top" constant="92" id="mAE-IO-9K1"/>
+                            <constraint firstItem="npi-MC-yRj" firstAttribute="centerX" secondItem="rOs-lK-BVk" secondAttribute="centerX" id="rGQ-zF-fpQ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="InputLimit" id="Vx2-gB-lIY"/>
+                    <connections>
+                        <outlet property="inputLimitField" destination="Hec-wb-1Yp" id="CeD-Qp-uVQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OSj-dL-mDd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1678" y="210"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="TextColor">
+            <color red="0.10999999940395355" green="0.11800000071525574" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
