@@ -36,6 +36,9 @@
                             <rect key="frame" x="16" y="27" width="531" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="editingChanged:" destination="-1" eventType="editingDidEnd" id="exX-Nu-mYV"/>
+                            </connections>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="leftLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1s-nZ-cTe">
                             <rect key="frame" x="16" y="3" width="47.5" height="16"/>
