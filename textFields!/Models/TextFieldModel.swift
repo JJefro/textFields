@@ -10,8 +10,6 @@ import UIKit
 
 class TextFieldModel {
 
-    var fieldSettings: TextFieldsSettings = .noDigits
-
     // MARK: - noDigitsField
     func ignoreDigits(replacementString string: String) -> Bool {
         let ignoredCharacters = CharacterSet.decimalDigits
