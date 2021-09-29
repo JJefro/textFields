@@ -72,7 +72,7 @@ class TextFieldView: UIView {
     }
     
     @IBAction func editingChanged(_ sender: CustomTextField) {
-        guard let text = sender.text else {return}
+    guard let text = sender.text else {return}
         switch fieldSettings {
         case .inputLimit:
             if model.inputLimit < 0 {

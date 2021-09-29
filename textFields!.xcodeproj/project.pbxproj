@@ -27,6 +27,11 @@
 		97AA949826F912A300D000BE /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 97AA949726F912A300D000BE /* SF-Pro-Display-Bold.otf */; };
 		97AA949A26F912AE00D000BE /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 97AA949926F912AE00D000BE /* SF-Pro-Display-Regular.otf */; };
 		97ADBE4C27046784008FDF85 /* TextFieldView + UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ADBE4B27046784008FDF85 /* TextFieldView + UITextFieldDelegate.swift */; };
+		97EF1B6527046D990039159B /* InputLimitField.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97EF1B6327046D990039159B /* InputLimitField.storyboard */; };
+		97EF1B6A27046DDE0039159B /* LinkField.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97EF1B6827046DDE0039159B /* LinkField.storyboard */; };
+		97EF1B7627046EC30039159B /* NoDigitsField.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97EF1B7427046EC30039159B /* NoDigitsField.storyboard */; };
+		97EF1B7927046ECB0039159B /* OnlyCharactersField.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97EF1B7727046ECB0039159B /* OnlyCharactersField.storyboard */; };
+		97EF1B7C27046ED10039159B /* ValidationRulesField.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97EF1B7A27046ED10039159B /* ValidationRulesField.storyboard */; };
 		BFC81DC9A09FD05C2B6166A1 /* Pods_textFields_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA416BDAD7C8624A62D9AF2 /* Pods_textFields_.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +59,11 @@
 		97AA949726F912A300D000BE /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		97AA949926F912AE00D000BE /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		97ADBE4B27046784008FDF85 /* TextFieldView + UITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFieldView + UITextFieldDelegate.swift"; sourceTree = "<group>"; };
+		97EF1B6427046D990039159B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/InputLimitField.storyboard; sourceTree = "<group>"; };
+		97EF1B6927046DDE0039159B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LinkField.storyboard; sourceTree = "<group>"; };
+		97EF1B7527046EC30039159B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NoDigitsField.storyboard; sourceTree = "<group>"; };
+		97EF1B7827046ECB0039159B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OnlyCharactersField.storyboard; sourceTree = "<group>"; };
+		97EF1B7B27046ED10039159B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ValidationRulesField.storyboard; sourceTree = "<group>"; };
 		9CA416BDAD7C8624A62D9AF2 /* Pods_textFields_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_textFields_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4D0741A9724D0BFDE6E333D /* Pods-textFields!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-textFields!.debug.xcconfig"; path = "Target Support Files/Pods-textFields!/Pods-textFields!.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,7 +183,7 @@
 		97AA949126F910D300D000BE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				977905DB26F689C7005815EA /* Main.storyboard */,
+				97EF1B6D27046E210039159B /* Storyboards */,
 				9788D54A26FE850800C610EE /* CustomTextField.swift */,
 				9788D54926FE847B00C610EE /* TextFieldView */,
 			);
@@ -187,6 +197,19 @@
 				97AA949726F912A300D000BE /* SF-Pro-Display-Bold.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		97EF1B6D27046E210039159B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				97EF1B6827046DDE0039159B /* LinkField.storyboard */,
+				97EF1B6327046D990039159B /* InputLimitField.storyboard */,
+				97EF1B7727046ECB0039159B /* OnlyCharactersField.storyboard */,
+				97EF1B7A27046ED10039159B /* ValidationRulesField.storyboard */,
+				97EF1B7427046EC30039159B /* NoDigitsField.storyboard */,
+				977905DB26F689C7005815EA /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,9 +273,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				977905E226F689C8005815EA /* LaunchScreen.storyboard in Resources */,
+				97EF1B7C27046ED10039159B /* ValidationRulesField.storyboard in Resources */,
+				97EF1B7927046ECB0039159B /* OnlyCharactersField.storyboard in Resources */,
 				97AA949826F912A300D000BE /* SF-Pro-Display-Bold.otf in Resources */,
+				97EF1B6A27046DDE0039159B /* LinkField.storyboard in Resources */,
 				977905DF26F689C8005815EA /* Assets.xcassets in Resources */,
+				97EF1B6527046D990039159B /* InputLimitField.storyboard in Resources */,
 				97AA949526F9110F00D000BE /* TextFieldView.xib in Resources */,
+				97EF1B7627046EC30039159B /* NoDigitsField.storyboard in Resources */,
 				97AA949A26F912AE00D000BE /* SF-Pro-Display-Regular.otf in Resources */,
 				977905DD26F689C7005815EA /* Main.storyboard in Resources */,
 			);
@@ -358,6 +386,46 @@
 				977905E126F689C8005815EA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		97EF1B6327046D990039159B /* InputLimitField.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97EF1B6427046D990039159B /* Base */,
+			);
+			name = InputLimitField.storyboard;
+			sourceTree = "<group>";
+		};
+		97EF1B6827046DDE0039159B /* LinkField.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97EF1B6927046DDE0039159B /* Base */,
+			);
+			name = LinkField.storyboard;
+			sourceTree = "<group>";
+		};
+		97EF1B7427046EC30039159B /* NoDigitsField.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97EF1B7527046EC30039159B /* Base */,
+			);
+			name = NoDigitsField.storyboard;
+			sourceTree = "<group>";
+		};
+		97EF1B7727046ECB0039159B /* OnlyCharactersField.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97EF1B7827046ECB0039159B /* Base */,
+			);
+			name = OnlyCharactersField.storyboard;
+			sourceTree = "<group>";
+		};
+		97EF1B7A27046ED10039159B /* ValidationRulesField.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97EF1B7B27046ED10039159B /* Base */,
+			);
+			name = ValidationRulesField.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

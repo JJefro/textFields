@@ -37,7 +37,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
-                                <action selector="editingChanged:" destination="-1" eventType="editingDidEnd" id="exX-Nu-mYV"/>
+                                <action selector="editingChanged:" destination="-1" eventType="editingChanged" id="jqI-Rn-fgC"/>
                             </connections>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="leftLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1s-nZ-cTe">
