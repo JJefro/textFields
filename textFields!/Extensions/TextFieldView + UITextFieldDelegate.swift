@@ -27,7 +27,8 @@ extension TextFieldView: UITextFieldDelegate {
 
         guard let text = textField.text else {fatalError()}
         let textLength = text.count + string.count - range.length
-        let currentText = text + string
+        guard let textRange = Range(range, in: text) else {return false}
+        let currentText = text.replacingCharacters(in: textRange, with: string)
 
         switch fieldSettings {
         case .noDigits:
@@ -36,13 +37,26 @@ extension TextFieldView: UITextFieldDelegate {
             inputLimitLabel.text = String(model.updateLimitInput(length: textLength))
             updateLimitedInputFieldColor()
         case .onlyCharacters:
-            return model.allowedChar(text: currentText, replacementString: string)
+            return model.allowedChar(text: text + string, replacementString: string)
         case .link:
             txtField.autocapitalizationType = .none
             if txtField.text!.isEmpty {
                 txtField.text!.append("https://")
             }
-        default: break
+        case .validationRules:
+            txtField.isSecureTextEntry = true
+
+            txtField.isMinOfCharactersRuleDone =
+            model.hasRequiredQuantityOfCharacters(charCount: textLength)
+
+            txtField.isMinOfDigitsRuleDone =
+            model.isContainsDigit(text: currentText)
+
+            txtField.isMinOfLowercaseCharactersRuleDone =
+            model.isContainsLowercase(text: currentText)
+
+            txtField.isMinOfUppercaseCharactersRuleDone =
+            model.isContainsUppercase(text: currentText)
         }
         return true
     }

@@ -18,7 +18,6 @@ class TextFieldsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         noDigitsField.fieldSettings = .noDigits
         inputLimitField.fieldSettings = .inputLimit
         onlyCharactersField.fieldSettings = .onlyCharacters

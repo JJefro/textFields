@@ -5,7 +5,7 @@
 //  Created by Jevgenijs Jefrosinins on 22/09/2021.
 //
 
-import Foundation
+import UIKit
 
 enum TextFieldsSettings {
     case noDigits
@@ -40,6 +40,35 @@ enum TextFieldsSettings {
             return "www.example.com"
         case .validationRules:
             return "Password"
+        }
+    }
+}
+
+enum TFColors {
+    case viewBackground
+    case buttonBackground
+    case text
+    case red
+    case green
+    case blue
+    case orange
+
+    var color: UIColor {
+        switch self {
+        case .viewBackground:
+            return UIColor(named: "BackgroundColor")!
+        case .buttonBackground:
+            return UIColor(named: "ButtonBackgroundColor")!
+        case .text:
+            return UIColor(named: "TextColor")!
+        case .red:
+            return UIColor(named: "Red")!
+        case .green:
+            return UIColor(named: "Green")!
+        case .blue:
+            return UIColor(named: "Blue")!
+        case .orange:
+            return UIColor(named: "Orange")!
         }
     }
 }

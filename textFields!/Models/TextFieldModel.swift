@@ -12,9 +12,7 @@ class TextFieldModel {
 
     // MARK: - noDigitsField
     func ignoreDigits(replacementString string: String) -> Bool {
-        let ignoredCharacters = CharacterSet.decimalDigits
-        let characterSet = CharacterSet(charactersIn: string)
-        return string.isEmpty || !characterSet.isSubset(of: ignoredCharacters)
+        return !string.contains(where: { $0.isNumber })
     }
 
     // MARK: - inputLimitField
@@ -26,11 +24,13 @@ class TextFieldModel {
     }
 
     func changeTextColor(text: String) -> NSMutableAttributedString {
-        let lengthOfRedText = text.utf16.count - 10
-        let range = NSRange(location: 10, length: lengthOfRedText)
+        let rangeOfExtraText = NSRange(location: 10, length: text.utf16.count - 10)
         let string = NSAttributedString(string: text)
         let attributedString = NSMutableAttributedString(attributedString: string)
-        attributedString.addAttribute(.foregroundColor, value: UIColor.red, range: range)
+        if inputLimit < 0 {
+            attributedString.addAttribute(.foregroundColor, value: TFColors.red.color, range: rangeOfExtraText)
+            attributedString.addAttribute(.foregroundColor, value: TFColors.text.color, range: NSRange(location: 0, length: 10))
+        }
         return attributedString
     }
 
@@ -54,13 +54,6 @@ class TextFieldModel {
     }
 
     // MARK: - linkField
-
-    // Checking URL validation using regular expression
-//    func isUrlValid(stringURL: String) -> Bool {
-//        let regex = "((?:http|https)://)?(?:www\\.)?[\\w\\d\\-_]+\\.\\w{2,3}(\\.\\w{2})?(/(?<=/)(?:[\\w\\d\\-./_]+)?)?"
-//        let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
-//        return predicate.evaluate(with: stringURL)
-//    }
 
     func checkUrlValidation(input: String) -> String? {
         var url = String()
