@@ -17,8 +17,6 @@ class CustomTextField: UITextField {
 
     private var progressView = UIProgressView()
 
-    private let customTextColor = UIColor(named: "TextColor")
-
     private var progressLineHeight = 7
     private var progressLineCornerRadius: CGFloat = 10
     private var validationRulesTextSize: CGFloat = 13
@@ -46,13 +44,6 @@ class CustomTextField: UITextField {
         }
     }
 
-    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
-            if action == #selector(UIResponderStandardEditActions.copy(_:)) {
-                return true
-            }
-            return super.canPerformAction(action, withSender: sender)
-        }
-
     @IBInspectable var hasValidationRules: Bool = false {
         didSet {
             if hasValidationRules {
@@ -64,23 +55,23 @@ class CustomTextField: UITextField {
 
     @IBInspectable var isLimited: Bool = false {
         didSet {
-            self.layer.borderColor = isLimited ? UIColor.red.cgColor : UIColor.blue.cgColor
+            self.layer.borderColor = isLimited ? TFColors.red.color.cgColor : TFColors.blue.color.cgColor
         }
     }
 
     override var isSelected: Bool {
         didSet {
-            self.layer.borderColor = !isSelected ? UIColor.gray.cgColor : UIColor.blue.cgColor
+            self.layer.borderColor = !isSelected ? UIColor.gray.cgColor : TFColors.blue.color.cgColor
         }
     }
 
     private func updateProgressViewTintColor() {
         if progressView.progress <= 0.25 {
-            progressView.progressTintColor = UIColor.red
+            progressView.progressTintColor = TFColors.red.color
         } else if progressView.progress <= 0.75 {
-            progressView.progressTintColor = UIColor.orange
+            progressView.progressTintColor = TFColors.orange.color
         } else {
-            progressView.progressTintColor = UIColor.green
+            progressView.progressTintColor = TFColors.green.color
         }
     }
 
@@ -100,11 +91,11 @@ class CustomTextField: UITextField {
     @IBInspectable var isMinOfCharactersRuleDone: Bool = false {
         didSet {
             if isMinOfCharactersRuleDone {
-                minOfCharactersRule.textColor = UIColor.green
+                minOfCharactersRule.textColor = TFColors.green.color
                 minOfCharactersRule.text = "✓ Min length 8 characters."
                 progress += 1
             } else {
-                minOfCharactersRule.textColor = customTextColor
+                minOfCharactersRule.textColor = TFColors.text.color
                 minOfCharactersRule.text = "- Min length 8 characters."
                 progress -= 1
             }
@@ -114,11 +105,11 @@ class CustomTextField: UITextField {
     @IBInspectable var isMinOfDigitsRuleDone: Bool = false {
         didSet {
             if isMinOfDigitsRuleDone {
-                minOfDigitsRule.textColor = UIColor.green
+                minOfDigitsRule.textColor = TFColors.green.color
                 minOfDigitsRule.text = "✓ Min 1 digit,"
                 progress += 1
             } else {
-                minOfDigitsRule.textColor = customTextColor
+                minOfDigitsRule.textColor = TFColors.text.color
                 minOfDigitsRule.text = "- Min 1 digit,"
                 progress -= 1
             }
@@ -128,11 +119,11 @@ class CustomTextField: UITextField {
     @IBInspectable var isMinOfLowercaseCharactersRuleDone: Bool = false {
         didSet {
             if isMinOfLowercaseCharactersRuleDone {
-                minOfLowercaseCharactersRule.textColor = UIColor.green
+                minOfLowercaseCharactersRule.textColor = TFColors.green.color
                 minOfLowercaseCharactersRule.text = "✓ Min 1 lowercase,"
                 progress += 1
             } else {
-                minOfLowercaseCharactersRule.textColor = customTextColor
+                minOfLowercaseCharactersRule.textColor = TFColors.text.color
                 minOfLowercaseCharactersRule.text = "- Min 1 lowercase,"
                 progress -= 1
             }
@@ -142,11 +133,11 @@ class CustomTextField: UITextField {
     @IBInspectable var isMinOfUppercaseCharactersRuleDone: Bool = false {
         didSet {
             if isMinOfUppercaseCharactersRuleDone {
-                minOfUppercaseCharactersRule.textColor = UIColor.green
+                minOfUppercaseCharactersRule.textColor = TFColors.green.color
                 minOfUppercaseCharactersRule.text = "✓ Min 1 capital required."
                 progress += 1
             } else {
-                minOfUppercaseCharactersRule.textColor = customTextColor
+                minOfUppercaseCharactersRule.textColor = TFColors.text.color
                 minOfUppercaseCharactersRule.text = "- Min 1 capital required."
                 progress -= 1
             }

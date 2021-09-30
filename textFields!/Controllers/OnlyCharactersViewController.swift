@@ -13,7 +13,6 @@ class OnlyCharactersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         onlyCharactersField.fieldSettings = .onlyCharacters
     }
 }

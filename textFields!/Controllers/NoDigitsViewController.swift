@@ -12,7 +12,6 @@ class NoDigitsViewController: UIViewController {
     @IBOutlet weak var noDigitsField: TextFieldView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         noDigitsField.fieldSettings = .noDigits
     }
 }

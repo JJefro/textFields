@@ -14,7 +14,6 @@ class LinkViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         linkField.fieldSettings = .link
     }
 }

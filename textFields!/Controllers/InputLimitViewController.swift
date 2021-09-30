@@ -13,7 +13,6 @@ class InputLimitViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         inputLimitField.fieldSettings = .inputLimit
     }
 }
