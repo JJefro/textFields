@@ -13,7 +13,6 @@ class ValidationRulesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         validationRulesField.fieldSettings = .validationRules
     }
 }
