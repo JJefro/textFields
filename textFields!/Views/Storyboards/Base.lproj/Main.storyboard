@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -28,46 +27,55 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text Fields" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgF-UH-e3v">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
+                                        <color key="backgroundColor" name="BackgroundColor"/>
+                                        <color key="tintColor" name="TextColor"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpG-sI-hbv" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="65" width="414" height="66"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="BackgroundColor"/>
+                                        <color key="tintColor" name="TextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="66" id="04u-zH-Hek"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ICe-dj-SeO" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="155" width="414" height="66"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="BackgroundColor"/>
+                                        <color key="tintColor" name="TextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="66" id="e3e-9X-mPB"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drH-M9-F7V" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="245" width="414" height="66"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="BackgroundColor"/>
+                                        <color key="tintColor" name="TextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="66" id="PYz-iZ-lep"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NGO-Bl-eun" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="335" width="414" height="66"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="BackgroundColor"/>
+                                        <color key="tintColor" name="TextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="66" id="8xt-iU-rSg"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3e6-vd-zcq" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="425" width="414" height="66"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="BackgroundColor"/>
+                                        <color key="tintColor" name="TextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="66" id="wdJ-4O-f5Y"/>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" name="BackgroundColor"/>
+                                <color key="tintColor" name="TextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="NGO-Bl-eun" secondAttribute="trailing" id="EEc-pL-Elg"/>
                                     <constraint firstAttribute="trailing" secondItem="3e6-vd-zcq" secondAttribute="trailing" id="ExM-vt-Ard"/>
@@ -103,7 +111,8 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <color key="tintColor" name="TextColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Da-Y9-JR7" secondAttribute="trailing" id="01e-qb-a5G"/>
                             <constraint firstItem="8Da-Y9-JR7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" priority="250" constant="92" id="H9N-aT-wE1"/>
@@ -197,14 +206,14 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="BackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="ButtonBackgroundColor">
             <color red="0.37999999523162842" green="0.3059999942779541" blue="0.50999999046325684" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="TextColor">
             <color red="0.10999999940395355" green="0.11800000071525574" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
