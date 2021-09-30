@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -25,20 +24,24 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link Field" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ow4-6L-IYT">
                                 <rect key="frame" x="134.5" y="136" width="145.5" height="41"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
+                                <color key="tintColor" name="TextColor"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
                                 <color key="textColor" name="TextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m5w-rY-fT2" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="348" width="414" height="200"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
+                                <color key="tintColor" name="TextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="7sX-Lg-S1z"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bxW-53-171"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <color key="tintColor" name="TextColor"/>
                         <constraints>
                             <constraint firstItem="m5w-rY-fT2" firstAttribute="leading" secondItem="bxW-53-171" secondAttribute="leading" id="0xV-PK-RLB"/>
                             <constraint firstItem="bxW-53-171" firstAttribute="trailing" secondItem="m5w-rY-fT2" secondAttribute="trailing" id="3p3-tq-NN5"/>
@@ -59,11 +62,11 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="BackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="TextColor">
             <color red="0.10999999940395355" green="0.11800000071525574" blue="0.125" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
