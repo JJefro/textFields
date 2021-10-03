@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <accessibilityOverrides isEnabled="YES" boldText="YES" buttonShapes="YES" increaseContrast="YES" reduceTransparency="YES" dynamicTypePreference="4"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Bold.otf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Text Fields View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="TextFieldsViewController" id="BYZ-38-t0r" customClass="TextFieldsViewController" customModule="textFields_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgu-7M-Rxq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yWr-gU-ix4" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text Fields" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iG-U1-vRU" userLabel="Title">
+                                                <rect key="frame" x="125.33333333333333" y="92" width="163.66666666666669" height="40.666666666666657"/>
+                                                <color key="backgroundColor" name="BackgroundColor"/>
+                                                <color key="tintColor" name="TextColor"/>
+                                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="u7P-wz-jxb" userLabel="TextFields">
+                                                <rect key="frame" x="0.0" y="156.66666666666663" width="414" height="426"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dO-Aq-2Jh" userLabel="NoDigitsField" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
+                                                        <color key="backgroundColor" name="BackgroundColor"/>
+                                                        <color key="tintColor" name="TextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" priority="250" constant="66" id="fgS-oi-Ucp"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C6a-Hd-Eqn" userLabel="InputLimitField" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="90" width="414" height="66"/>
+                                                        <color key="backgroundColor" name="BackgroundColor"/>
+                                                        <color key="tintColor" name="TextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" priority="250" constant="66" id="ZbF-ip-45T"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="da3-vQ-V2A" userLabel="OnlyCharactersField" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="180.00000000000003" width="414" height="66"/>
+                                                        <color key="backgroundColor" name="BackgroundColor"/>
+                                                        <color key="tintColor" name="TextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" priority="250" constant="66" id="KxU-X3-rFW"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDf-pJ-bJS" userLabel="LinkField" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="270" width="414" height="66"/>
+                                                        <color key="backgroundColor" name="BackgroundColor"/>
+                                                        <color key="tintColor" name="TextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" priority="250" constant="66" id="PM6-Bt-Re6"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jzn-mE-qQQ" userLabel="ValidationRulesField" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="360" width="414" height="66"/>
+                                                        <color key="backgroundColor" name="BackgroundColor"/>
+                                                        <color key="tintColor" name="TextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" priority="250" constant="66" id="d8r-0v-ONx"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" name="BackgroundColor"/>
+                                                <color key="tintColor" name="TextColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="3dO-Aq-2Jh" firstAttribute="leading" secondItem="u7P-wz-jxb" secondAttribute="leading" id="7T8-eD-6Fp"/>
+                                                    <constraint firstAttribute="trailing" secondItem="C6a-Hd-Eqn" secondAttribute="trailing" id="BJ8-vX-JKL"/>
+                                                    <constraint firstItem="wDf-pJ-bJS" firstAttribute="leading" secondItem="u7P-wz-jxb" secondAttribute="leading" id="IWa-ni-JbJ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="da3-vQ-V2A" secondAttribute="trailing" id="JbB-1n-VGr"/>
+                                                    <constraint firstAttribute="trailing" secondItem="C6a-Hd-Eqn" secondAttribute="trailing" id="Lpf-vm-D4A"/>
+                                                    <constraint firstItem="jzn-mE-qQQ" firstAttribute="leading" secondItem="u7P-wz-jxb" secondAttribute="leading" id="Q2Y-jO-QZS"/>
+                                                    <constraint firstItem="C6a-Hd-Eqn" firstAttribute="leading" secondItem="u7P-wz-jxb" secondAttribute="leading" id="QAs-m8-YMp"/>
+                                                    <constraint firstItem="3dO-Aq-2Jh" firstAttribute="leading" secondItem="u7P-wz-jxb" secondAttribute="leading" id="feC-h2-xZN"/>
+                                                    <constraint firstItem="da3-vQ-V2A" firstAttribute="leading" secondItem="u7P-wz-jxb" secondAttribute="leading" id="gdI-h8-aXN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="jzn-mE-qQQ" secondAttribute="trailing" id="ggP-TU-1mP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3dO-Aq-2Jh" secondAttribute="trailing" id="vtf-Ra-ep9"/>
+                                                    <constraint firstAttribute="trailing" secondItem="wDf-pJ-bJS" secondAttribute="trailing" id="woe-4K-uXq"/>
+                                                    <constraint firstItem="C6a-Hd-Eqn" firstAttribute="leading" secondItem="u7P-wz-jxb" secondAttribute="leading" id="wot-CV-RNg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3dO-Aq-2Jh" secondAttribute="trailing" id="z3i-MD-K3J"/>
+                                                </constraints>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLu-aX-VXD" customClass="CardButton" customModule="textFields_" customModuleProvider="target">
+                                                <rect key="frame" x="157" y="836" width="100" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="F4W-8b-2VQ"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="bYY-UY-a10"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="tinted" title="Go" cornerStyle="capsule">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" name="ButtonBackgroundColor"/>
+                                                        <color key="strokeColor" name="TextColor"/>
+                                                    </backgroundConfiguration>
+                                                    <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="R58-y3-cOv" kind="presentation" id="Jxn-Cu-EK0"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" name="BackgroundColor"/>
+                                        <color key="tintColor" name="TextColor"/>
+                                        <constraints>
+                                            <constraint firstItem="u7P-wz-jxb" firstAttribute="top" secondItem="7iG-U1-vRU" secondAttribute="bottom" constant="24" id="1Pp-vw-Brf"/>
+                                            <constraint firstItem="u7P-wz-jxb" firstAttribute="leading" secondItem="yWr-gU-ix4" secondAttribute="leading" id="2nl-fC-aAv"/>
+                                            <constraint firstAttribute="bottom" secondItem="rLu-aX-VXD" secondAttribute="bottom" constant="20" id="Dqg-dG-RVY"/>
+                                            <constraint firstItem="rLu-aX-VXD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="jzn-mE-qQQ" secondAttribute="bottom" constant="200" id="Xcy-7Q-emK"/>
+                                            <constraint firstItem="u7P-wz-jxb" firstAttribute="centerX" secondItem="yWr-gU-ix4" secondAttribute="centerX" id="fZS-oP-mN6"/>
+                                            <constraint firstItem="rLu-aX-VXD" firstAttribute="centerX" secondItem="yWr-gU-ix4" secondAttribute="centerX" id="jXr-6f-SfX"/>
+                                            <constraint firstItem="7iG-U1-vRU" firstAttribute="centerX" secondItem="yWr-gU-ix4" secondAttribute="centerX" id="kKO-QT-COq"/>
+                                            <constraint firstItem="7iG-U1-vRU" firstAttribute="top" secondItem="yWr-gU-ix4" secondAttribute="top" constant="92" id="r2U-7E-Peo"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="BackgroundColor"/>
+                                <color key="tintColor" name="TextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="yWr-gU-ix4" secondAttribute="bottom" id="7Pc-ko-lk7"/>
+                                    <constraint firstAttribute="trailing" secondItem="yWr-gU-ix4" secondAttribute="trailing" id="DHD-wg-z5R"/>
+                                    <constraint firstItem="yWr-gU-ix4" firstAttribute="leading" secondItem="Cgu-7M-Rxq" secondAttribute="leading" id="Qdi-6d-yrS"/>
+                                    <constraint firstItem="yWr-gU-ix4" firstAttribute="top" secondItem="Cgu-7M-Rxq" secondAttribute="top" id="zQS-Su-uiZ"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <color key="tintColor" name="TextColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Cgu-7M-Rxq" secondAttribute="bottom" id="Ehw-Lk-yXg"/>
+                            <constraint firstAttribute="trailing" secondItem="Cgu-7M-Rxq" secondAttribute="trailing" id="J4Q-lv-MiB"/>
+                            <constraint firstItem="yWr-gU-ix4" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" priority="250" id="du1-BB-KNY"/>
+                            <constraint firstItem="yWr-gU-ix4" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="wpd-Lf-mmZ"/>
+                            <constraint firstItem="Cgu-7M-Rxq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="y5S-dW-lCn"/>
+                            <constraint firstItem="Cgu-7M-Rxq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ybU-Dv-RVu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qXx-GC-CEt"/>
+                    <connections>
+                        <outlet property="goButton" destination="rLu-aX-VXD" id="2fI-R1-jSx"/>
+                        <outlet property="inputLimitField" destination="C6a-Hd-Eqn" id="2K7-V8-1KU"/>
+                        <outlet property="linkField" destination="wDf-pJ-bJS" id="qDQ-of-Lom"/>
+                        <outlet property="noDigitsField" destination="3dO-Aq-2Jh" id="mnX-6E-uVl"/>
+                        <outlet property="onlyCharactersField" destination="da3-vQ-V2A" id="nmw-OO-fTv"/>
+                        <outlet property="scrollView" destination="Cgu-7M-Rxq" id="bM9-Ty-SVV"/>
+                        <outlet property="titleLabel" destination="7iG-U1-vRU" id="VVO-Vk-CCD"/>
+                        <outlet property="validationRulesField" destination="jzn-mE-qQQ" id="4Wc-Va-6lh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1000.0000000000001" y="-468.08035714285711"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="IrG-uc-wIJ">
+            <objects>
+                <tabBarController id="R58-y3-cOv" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="tbc-JA-biK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <color key="tintColor" name="TextColor"/>
+                        <color key="barTintColor" name="TextColor"/>
+                        <color key="selectedImageTintColor" name="Blue"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Zby-Cf-btf" kind="relationship" relationship="viewControllers" id="NeK-85-thq"/>
+                        <segue destination="hTY-xh-N5U" kind="relationship" relationship="viewControllers" id="qog-xQ-bra"/>
+                        <segue destination="tPQ-Vx-3FW" kind="relationship" relationship="viewControllers" id="JDS-tZ-ehh"/>
+                        <segue destination="Wbq-76-r5l" kind="relationship" relationship="viewControllers" id="ovh-rl-pnj"/>
+                        <segue destination="ENc-fR-3Jx" kind="relationship" relationship="viewControllers" id="4ZA-E8-1kN"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jwr-bd-WoT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-309" y="-468"/>
+        </scene>
+        <!--OnlyCharactersFieldView-->
+        <scene sceneID="wgO-kh-5md">
+            <objects>
+                <viewControllerPlaceholder storyboardName="OnlyCharactersFieldView" id="tPQ-Vx-3FW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="uNy-Lg-loQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GCC-Ip-mhN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="393" y="-468"/>
+        </scene>
+        <!--LinkFieldView-->
+        <scene sceneID="5xd-wY-OD6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LinkFieldView" id="Wbq-76-r5l" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="A3T-cC-5L4"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gjD-ol-4x7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="342" y="-433"/>
+        </scene>
+        <!--ValidationRulesFieldView-->
+        <scene sceneID="gvi-JT-drv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ValidationRulesFieldView" id="ENc-fR-3Jx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="rz0-hd-zfM"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EqH-NP-0ov" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="393" y="-375"/>
+        </scene>
+        <!--NoDigitsFieldView-->
+        <scene sceneID="ExE-LL-yH9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NoDigitsFieldView" id="Zby-Cf-btf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="9jl-4x-tWn"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nrl-qR-0Sq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="362" y="-551"/>
+        </scene>
+        <!--InputLimitFieldView-->
+        <scene sceneID="Aem-iw-axQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="InputLimitFieldView" id="hTY-xh-N5U" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="uaJ-qm-mVK"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hcX-fV-ATC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="367" y="-512"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="BackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Blue">
+            <color red="0.28499999642372131" green="0.46900001168251038" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="ButtonBackgroundColor">
+            <color red="0.40000000596046448" green="0.3059999942779541" blue="0.53299999237060547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextColor">
+            <color red="0.11400000005960464" green="0.12200000137090683" blue="0.1289999932050705" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

@@ -2,7 +2,7 @@
 //  CustomTextField.swift
 //  textFields!
 //
-//  Created by Jevgenijs Jefrosinins on 25/09/2021.
+//  Created by Jevgenijs Jefrosinins on 22/09/2021.
 //
 
 import UIKit
@@ -10,13 +10,13 @@ import SnapKit
 
 class CustomTextField: UITextField {
 
-    private var minOfCharactersRule = UILabel()
-    private var minOfDigitsRule = UILabel()
-    private var minOfLowercaseCharactersRule = UILabel()
-    private var minOfUppercaseCharactersRule = UILabel()
+    var minOfCharactersRule = UILabel()
+    var minOfDigitsRule = UILabel()
+    var minOfLowercaseCharRule = UILabel()
+    var minOfUppercaseCharRule = UILabel()
 
-    private var progressView = UIProgressView()
-
+    var progressView = UIProgressView()
+    
     private var progressLineHeight = 7
     private var progressLineCornerRadius: CGFloat = 10
     private var validationRulesTextSize: CGFloat = 13
@@ -33,7 +33,7 @@ class CustomTextField: UITextField {
     /// When progress has changed, we change progress line length and progressTintColor with animation
     private var progress: Float = 0 {
         didSet {
-            let rules = [isMinOfCharactersRuleDone, isMinOfDigitsRuleDone, isMinOfLowercaseCharactersRuleDone, isMinOfUppercaseCharactersRuleDone]
+            let rules = [isMinOfCharRuleDone, isMinOfDigitsRuleDone, isMinOfLowercaseCharRuleDone, isMinOfUppercaseCharRuleDone]
             let completedRules = rules.filter { $0 == true } .count
             progress = Float(completedRules) * stepInPercentageTerms
 
@@ -88,9 +88,9 @@ class CustomTextField: UITextField {
     }
 
     // MARK: - Validation Rules Settings
-    @IBInspectable var isMinOfCharactersRuleDone: Bool = false {
+    @IBInspectable var isMinOfCharRuleDone: Bool = false {
         didSet {
-            if isMinOfCharactersRuleDone {
+            if isMinOfCharRuleDone {
                 minOfCharactersRule.textColor = TFColors.green.color
                 minOfCharactersRule.text = "✓ Min length 8 characters."
                 progress += 1
@@ -116,29 +116,29 @@ class CustomTextField: UITextField {
         }
     }
 
-    @IBInspectable var isMinOfLowercaseCharactersRuleDone: Bool = false {
+    @IBInspectable var isMinOfLowercaseCharRuleDone: Bool = false {
         didSet {
-            if isMinOfLowercaseCharactersRuleDone {
-                minOfLowercaseCharactersRule.textColor = TFColors.green.color
-                minOfLowercaseCharactersRule.text = "✓ Min 1 lowercase,"
+            if isMinOfLowercaseCharRuleDone {
+                minOfLowercaseCharRule.textColor = TFColors.green.color
+                minOfLowercaseCharRule.text = "✓ Min 1 lowercase,"
                 progress += 1
             } else {
-                minOfLowercaseCharactersRule.textColor = TFColors.text.color
-                minOfLowercaseCharactersRule.text = "- Min 1 lowercase,"
+                minOfLowercaseCharRule.textColor = TFColors.text.color
+                minOfLowercaseCharRule.text = "- Min 1 lowercase,"
                 progress -= 1
             }
         }
     }
 
-    @IBInspectable var isMinOfUppercaseCharactersRuleDone: Bool = false {
+    @IBInspectable var isMinOfUppercaseCharRuleDone: Bool = false {
         didSet {
-            if isMinOfUppercaseCharactersRuleDone {
-                minOfUppercaseCharactersRule.textColor = TFColors.green.color
-                minOfUppercaseCharactersRule.text = "✓ Min 1 capital required."
+            if isMinOfUppercaseCharRuleDone {
+                minOfUppercaseCharRule.textColor = TFColors.green.color
+                minOfUppercaseCharRule.text = "✓ Min 1 capital required."
                 progress += 1
             } else {
-                minOfUppercaseCharactersRule.textColor = TFColors.text.color
-                minOfUppercaseCharactersRule.text = "- Min 1 capital required."
+                minOfUppercaseCharRule.textColor = TFColors.text.color
+                minOfUppercaseCharRule.text = "- Min 1 capital required."
                 progress -= 1
             }
         }
@@ -166,19 +166,19 @@ class CustomTextField: UITextField {
             make.leading.equalToSuperview().inset(leadingConstraints)
         }
 
-        minOfLowercaseCharactersRule.text = "- Min 1 lowercase,"
-        minOfLowercaseCharactersRule.font = labelFont
-        superview?.addSubview(minOfLowercaseCharactersRule)
-        minOfLowercaseCharactersRule.snp.makeConstraints { make in
+        minOfLowercaseCharRule.text = "- Min 1 lowercase,"
+        minOfLowercaseCharRule.font = labelFont
+        superview?.addSubview(minOfLowercaseCharRule)
+        minOfLowercaseCharRule.snp.makeConstraints { make in
             make.bottom.equalTo(minOfDigitsRule).inset(topConstraints)
             make.leading.equalToSuperview().inset(leadingConstraints)
         }
 
-        minOfUppercaseCharactersRule.text = "- Min 1 capital required."
-        minOfUppercaseCharactersRule.font = labelFont
-        superview?.addSubview(minOfUppercaseCharactersRule)
-        minOfUppercaseCharactersRule.snp.makeConstraints { make in
-            make.bottom.equalTo(minOfLowercaseCharactersRule).inset(topConstraints)
+        minOfUppercaseCharRule.text = "- Min 1 capital required."
+        minOfUppercaseCharRule.font = labelFont
+        superview?.addSubview(minOfUppercaseCharRule)
+        minOfUppercaseCharRule.snp.makeConstraints { make in
+            make.bottom.equalTo(minOfLowercaseCharRule).inset(topConstraints)
             make.leading.equalToSuperview().inset(leadingConstraints)
         }
     }
