@@ -10,10 +10,13 @@ import SafariServices
 
 class LinkViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var linkField: TextFieldView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         linkField.fieldSettings = .link
+
+        createAccessibilityIdentifiers()
     }
 }
