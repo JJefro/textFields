@@ -9,10 +9,13 @@ import UIKit
 
 class ValidationRulesViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var validationRulesField: TextFieldView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         validationRulesField.fieldSettings = .validationRules
+
+        createAccessibilityIdentifiers()
     }
 }

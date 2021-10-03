@@ -9,10 +9,13 @@ import UIKit
 
 class InputLimitViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var inputLimitField: TextFieldView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         inputLimitField.fieldSettings = .inputLimit
+
+        createAccessibilityIdentifiers()
     }
 }

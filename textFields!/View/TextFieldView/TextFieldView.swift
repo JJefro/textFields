@@ -10,10 +10,10 @@ import SnapKit
 import SafariServices
 
 class TextFieldView: UIView {
-    
-    @IBOutlet weak var txtField: CustomTextField!
+
     @IBOutlet weak var txtFieldTitle: UILabel!
-    @IBOutlet weak var inputLimitLabel: UILabel!
+    @IBOutlet weak var inputLimitScore: UILabel!
+    @IBOutlet weak var txtField: CustomTextField!
 
     let nibName = "TextFieldView"
     var contentView: UIView?
@@ -37,6 +37,8 @@ class TextFieldView: UIView {
 
     private func commonInit() {
         txtField.delegate = self
+        txtField.returnKeyType = .done
+        txtField.addTarget(self, action: #selector(TextFieldView.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
     }
 
     private func loadViewFromNib() -> UIView? {
@@ -50,45 +52,36 @@ class TextFieldView: UIView {
         case .noDigits:
             txtFieldTitle.text = fieldSettings.title
             txtField.placeholder = fieldSettings.placeholder
-            inputLimitLabel.isHidden = true
+            inputLimitScore.isHidden = true
         case .inputLimit:
             txtFieldTitle.text = fieldSettings.title
             txtField.placeholder = fieldSettings.placeholder
-            inputLimitLabel.text = String(model.inputLimit)
+            inputLimitScore.text = String(model.inputLimit)
         case .onlyCharacters:
             txtFieldTitle.text = fieldSettings.title
             txtField.placeholder = fieldSettings.placeholder
-            inputLimitLabel.isHidden = true
+            inputLimitScore.isHidden = true
         case .link:
             txtFieldTitle.text = fieldSettings.title
             txtField.placeholder = fieldSettings.placeholder
-            inputLimitLabel.isHidden = true
+            txtField.keyboardType = .URL
+            inputLimitScore.isHidden = true
         case .validationRules:
             txtFieldTitle.text = fieldSettings.title
             txtField.placeholder = fieldSettings.placeholder
-            inputLimitLabel.isHidden = true
+            inputLimitScore.isHidden = true
+            txtField.isSecureTextEntry = true
             txtField.hasValidationRules = true
-        }
-    }
-
-    @IBAction func editingChanged(_ sender: CustomTextField) {
-        guard let text = sender.text else {return}
-        if fieldSettings == .inputLimit {
-            txtField.attributedText =  model.changeTextColor(text: text)
-        } else if fieldSettings == .onlyCharacters {
-            if !model.isSeparatorAdded, text.count == model.separatorIndex {
-                txtField.text!.append(model.separator)
-            }
         }
     }
 
     func updateLimitedInputFieldColor() {
         if model.inputLimit < 0 {
             txtField.isLimited = true
-            inputLimitLabel.textColor = TFColors.red.color
+            inputLimitScore.textColor = TFColors.red.color
         } else {
             txtField.isLimited = false
-            inputLimitLabel.textColor = TFColors.text.color
+            inputLimitScore.textColor = TFColors.text.color
             txtField.textColor = TFColors.text.color
         }
     }

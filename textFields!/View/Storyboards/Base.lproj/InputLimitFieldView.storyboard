@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xGA-LF-1sU">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Bold.otf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--InputLimit-->
+        <scene sceneID="iR8-mw-245">
+            <objects>
+                <viewController id="xGA-LF-1sU" customClass="InputLimitViewController" customModule="textFields_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zdj-0o-a9h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input Limit Field" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75i-v6-KiQ">
+                                <rect key="frame" x="84.5" y="136" width="245" height="41"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
+                                <color key="tintColor" name="TextColor"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gph-PM-VBC" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="398" width="414" height="100"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
+                                <color key="tintColor" name="TextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="sFz-uj-Wil"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9X5-cN-MCm"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <color key="tintColor" name="TextColor"/>
+                        <constraints>
+                            <constraint firstItem="Gph-PM-VBC" firstAttribute="leading" secondItem="9X5-cN-MCm" secondAttribute="leading" id="7te-L3-BaO"/>
+                            <constraint firstItem="9X5-cN-MCm" firstAttribute="trailing" secondItem="Gph-PM-VBC" secondAttribute="trailing" id="Spm-gb-T1P"/>
+                            <constraint firstItem="Gph-PM-VBC" firstAttribute="centerX" secondItem="zdj-0o-a9h" secondAttribute="centerX" id="obi-hB-J2b"/>
+                            <constraint firstItem="75i-v6-KiQ" firstAttribute="top" secondItem="9X5-cN-MCm" secondAttribute="top" constant="92" id="vkJ-kS-xpi"/>
+                            <constraint firstItem="Gph-PM-VBC" firstAttribute="centerY" secondItem="zdj-0o-a9h" secondAttribute="centerY" id="xeE-xe-rBu"/>
+                            <constraint firstItem="75i-v6-KiQ" firstAttribute="centerX" secondItem="zdj-0o-a9h" secondAttribute="centerX" id="za2-Ce-Y40"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="InputLimit" id="M4l-hi-D5s"/>
+                    <connections>
+                        <outlet property="inputLimitField" destination="Gph-PM-VBC" id="K6f-bc-7pJ"/>
+                        <outlet property="titleLabel" destination="75i-v6-KiQ" id="fKY-eG-AXa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hxM-eM-9F1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="600" y="-336"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="BackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextColor">
+            <color red="0.11400000005960464" green="0.12200000137090683" blue="0.1289999932050705" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>
