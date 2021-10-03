@@ -1,10 +1,11 @@
 //
-//  TextFieldStyle.swift
+//  TextFieldsModel.swift
 //  textFields!
 //
 //  Created by Jevgenijs Jefrosinins on 22/09/2021.
 //
 
+import Foundation
 import UIKit
 
 enum TextFieldsSettings {

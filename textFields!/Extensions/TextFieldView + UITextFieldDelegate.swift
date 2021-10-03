@@ -9,6 +9,12 @@ import UIKit
 
 extension TextFieldView: UITextFieldDelegate {
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        textField.isSelected = false
+        return true
+    }
+
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.isSelected = true
     }
@@ -23,6 +29,19 @@ extension TextFieldView: UITextFieldDelegate {
         }
     }
 
+    @objc func textFieldDidChange(_ textField: CustomTextField) {
+        guard let text = textField.text else {return}
+        switch fieldSettings {
+        case .inputLimit:
+            txtField.attributedText =  model.changeTextColor(text: text)
+        case .onlyCharacters:
+            if !model.isSeparatorAdded, text.count == model.separatorIndex {
+                txtField.text!.append(model.separator)
+            }
+        default: break
+        }
+    }
+
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
         guard let text = textField.text else {fatalError()}
@@ -34,28 +53,26 @@ extension TextFieldView: UITextFieldDelegate {
         case .noDigits:
             return model.ignoreDigits(replacementString: string)
         case .inputLimit:
-            inputLimitLabel.text = String(model.updateLimitInput(length: textLength))
+            inputLimitScore.text = String(model.updateLimitInput(length: textLength))
             updateLimitedInputFieldColor()
         case .onlyCharacters:
-            return model.allowedChar(text: text + string, replacementString: string)
+            return model.isAllowedChar(text: text + string, replacementString: string)
         case .link:
             txtField.autocapitalizationType = .none
             if txtField.text!.isEmpty {
                 txtField.text!.append("https://")
             }
         case .validationRules:
-            txtField.isSecureTextEntry = true
-
-            txtField.isMinOfCharactersRuleDone =
+            txtField.isMinOfCharRuleDone =
             model.hasRequiredQuantityOfCharacters(charCount: textLength)
 
             txtField.isMinOfDigitsRuleDone =
             model.isContainsDigit(text: currentText)
 
-            txtField.isMinOfLowercaseCharactersRuleDone =
+            txtField.isMinOfLowercaseCharRuleDone =
             model.isContainsLowercase(text: currentText)
 
-            txtField.isMinOfUppercaseCharactersRuleDone =
+            txtField.isMinOfUppercaseCharRuleDone =
             model.isContainsUppercase(text: currentText)
         }
         return true

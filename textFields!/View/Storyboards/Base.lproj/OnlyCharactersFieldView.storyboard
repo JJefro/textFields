@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dHX-Py-bHw">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Bold.otf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--OnlyCharacters-->
+        <scene sceneID="pgN-HM-Z2e">
+            <objects>
+                <viewController id="dHX-Py-bHw" customClass="OnlyCharactersViewController" customModule="textFields_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EQ1-Ta-r67">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Only Characters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXh-1F-lqq">
+                                <rect key="frame" x="81.5" y="136" width="251" height="41"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
+                                <color key="tintColor" name="TextColor"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r0U-BP-ffr" customClass="TextFieldView" customModule="textFields_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="398" width="414" height="100"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
+                                <color key="tintColor" name="TextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="aIo-P2-Zmn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qvk-ep-mWA"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <color key="tintColor" name="TextColor"/>
+                        <constraints>
+                            <constraint firstItem="r0U-BP-ffr" firstAttribute="leading" secondItem="qvk-ep-mWA" secondAttribute="leading" id="AfW-Lf-Uv3"/>
+                            <constraint firstItem="uXh-1F-lqq" firstAttribute="centerX" secondItem="EQ1-Ta-r67" secondAttribute="centerX" id="Con-Vn-Jhj"/>
+                            <constraint firstItem="r0U-BP-ffr" firstAttribute="centerX" secondItem="EQ1-Ta-r67" secondAttribute="centerX" id="VGQ-yv-63v"/>
+                            <constraint firstItem="r0U-BP-ffr" firstAttribute="centerY" secondItem="EQ1-Ta-r67" secondAttribute="centerY" id="XlN-rp-fad"/>
+                            <constraint firstItem="qvk-ep-mWA" firstAttribute="trailing" secondItem="r0U-BP-ffr" secondAttribute="trailing" id="cl6-hm-mbC"/>
+                            <constraint firstItem="uXh-1F-lqq" firstAttribute="top" secondItem="qvk-ep-mWA" secondAttribute="top" constant="92" id="xSy-lH-GfY"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="OnlyCharacters" id="uzH-gj-4GG"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="onlyCharactersField" destination="r0U-BP-ffr" id="ZQm-rI-yZ4"/>
+                        <outlet property="titleLabel" destination="uXh-1F-lqq" id="d1a-zl-Vkj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2xl-by-VPV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="484" y="-248"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="BackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextColor">
+            <color red="0.11400000005960464" green="0.12200000137090683" blue="0.1289999932050705" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

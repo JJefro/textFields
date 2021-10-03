@@ -1,11 +1,10 @@
 //
-//  TextFieldModel.swift
+//  TextFieldsModel.swift
 //  textFields!
 //
-//  Created by Jevgenijs Jefrosinins on 25/09/2021.
+//  Created by Jevgenijs Jefrosinins on 22/09/2021.
 //
 
-import Foundation
 import UIKit
 
 class TextFieldModel {
@@ -22,7 +21,7 @@ class TextFieldModel {
         inputLimit = 10 - length
         return inputLimit
     }
-
+    
     func changeTextColor(text: String) -> NSMutableAttributedString {
         let rangeOfExtraText = NSRange(location: 10, length: text.utf16.count - 10)
         let string = NSAttributedString(string: text)
@@ -40,7 +39,7 @@ class TextFieldModel {
     var isSeparatorAdded = false
     private let maxOfCharacters = 11
 
-    func allowedChar(text: String, replacementString string: String) -> Bool {
+    func isAllowedChar(text: String, replacementString string: String) -> Bool {
         var regex = String()
         let format = "SELF MATCHES %@"
         if text.count <= separatorIndex {
@@ -54,7 +53,6 @@ class TextFieldModel {
     }
 
     // MARK: - linkField
-
     func checkUrlValidation(input: String) -> String? {
         var url = String()
         let dataDetector = try? NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
@@ -83,7 +81,7 @@ class TextFieldModel {
     func isContainsLowercase(text: String) -> Bool {
         return text.contains(where: { $0.isLowercase })
     }
-
+    
     func isContainsUppercase(text: String) -> Bool {
         return text.contains(where: { $0.isUppercase })
     }
